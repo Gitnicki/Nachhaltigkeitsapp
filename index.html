@@ -27,6 +27,21 @@
         <P>Willkommen bei EcoLeaf deine nachhaltige Lösung für eine grünere Zukunft! Entdecke, handle und verändere die Welt mit nur einem Klick.</P>
         <button onclick="closePopup()">Schließen</button>
     </div>
+    <div class="login-section">
+        <h2>Anmeldung</h2>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="benutzername">Benutzername:</label>
+                <input type="text" id="benutzername" name="benutzername" required>
+            </div>
+            <div class="form-group">
+                <label for="passwort">Passwort:</label>
+                <input type="password" id="passwort" name="passwort" required>
+            </div>
+            <button type="submit">Anmelden</button>
+        </form>
+        <p>Noch kein Konto? <a href="/registrierung">Registrieren</a></p>
+    </div>
     <script src="backend/app.js"></script>
 </body>
 
