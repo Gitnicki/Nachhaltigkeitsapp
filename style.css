@@ -21,6 +21,7 @@ overlay {
   height: 100%;
   background-color: rgba(red, green, blue, alpha);
 }
+}
 
 .popup {
   popup {
