@@ -8,3 +8,9 @@ body {
     background-position: center; /* Zentriert das Bild */
     background-attachment: fixed; /* Optional: Fixiert das Bild beim Scrollen */
 }
+
+img {
+    float: center;
+    margin-right: 50px; /* Füge einen Abstand zwischen den Bildern hinzu, falls gewünscht */
+  
+}
