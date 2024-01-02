@@ -1,6 +1,11 @@
 body {
-    background-image: url('images/background.jpg'); /* Name Ihres Bildes */
-    background-size: cover; /* Stellt sicher, dass das Bild den gesamten Bereich abdeckt */
-    background-position: center; /* Zentriert das Bild */
-    background-attachment: fixed; /* Optional: Fixiert das Bild beim Scrollen */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('images/background.jpg'); /* Name Ihres Bildes */
+  background-size: cover; /* Stellt sicher, dass das Bild den gesamten Bereich abdeckt */
+  background-position: center; /* Zentriert das Bild */
+  background-attachment: fixed; /* Optional: Fixiert das Bild beim Scrollen */
 }
