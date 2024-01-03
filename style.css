@@ -9,8 +9,16 @@ body {
     background-attachment: fixed; /* Optional: Fixiert das Bild beim Scrollen */
 }
 
-img {
-    float: center;
-    margin-right: 50px; /* Füge einen Abstand zwischen den Bildern hinzu, falls gewünscht */
-  
+.buttons {
+    text-align: center;
+}
+
+.footer {
+  background-color: #333; /* Beispielhafte Hintergrundfarbe für den Footer */
+  color: #fff; /* Beispielhafte Textfarbe für den Footer */
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
