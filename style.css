@@ -11,6 +11,11 @@
   background-attachment: fixed; /* Optional: Fixiert das Bild beim Scrollen */
 }
 
+#header {
+    background-image: url(images/background.jpg);
+    text-align: center;
+    font-size: xx-large;
+}
 
 #contact
     {
