@@ -24,6 +24,19 @@ body {
 }
 
 
+
+.login {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: xx-large;
+  background-image: url(images/background.jpg); 
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed; 
+}
+
 .ecoleaf {
   margin: 0;
   display: flex;
@@ -35,6 +48,7 @@ body {
   background-position: center; 
   background-attachment: fixed; 
 }
+
 
 #header {
     background-image: url(images/background.jpg);
