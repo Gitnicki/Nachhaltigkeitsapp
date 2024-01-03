@@ -20,7 +20,7 @@
             <form class="container-fluid justify-content-start">
                 <button class="btn btn-outline-success me-2" type="button">Main button</button>
                 <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
-              </form>
+            </form>
         </div>
     </nav>
 
@@ -31,20 +31,26 @@
         <P>Willkommen bei EcoLeaf deine nachhaltige Lösung für eine grünere Zukunft! Entdecke, handle und verändere die Welt mit nur einem Klick.</P>
         <button onclick="closePopup()">Schließen</button>
     </div>
-    <div class="login-section">
-        <h2>Anmeldung</h2>
-        <form action="/login" method="post">
-            <div class="form-group">
-                <label for="benutzername">Benutzername:</label>
-                <input type="text" id="benutzername" name="benutzername" required>
-            </div>
-            <div class="form-group">
-                <label for="passwort">Passwort:</label>
-                <input type="password" id="passwort" name="passwort" required>
-            </div>
-            <button type="submit">Anmelden</button>
+    <div class="wrapper">
+        <form action="">
+        <h1>Login</h1>
+        <div class="input-box">
+            <input type="text" placeholder="Username" required>
+            <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+            <input type="password" placeholder="Password" required>
+            <i class='bx bxs-lock-alt' ></i>
+        </div>
+        <div class="remember-forgot">
+            <label><input type="checkbox">Remember Me</label>
+            <a href="#">Forgot Password</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="register-link">
+            <p>Dont have an account? <a href="#">Register</a></p>
+        </div>
         </form>
-        <p>Noch kein Konto? <a href="/registrierung">Registrieren</a></p>
     </div>
     <script src="backend/app.js"></script>
 </div>    
