@@ -1,3 +1,28 @@
+body {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('images/background.jpg'); /* Name Ihres Bildes */
+    background-size: cover; /* Stellt sicher, dass das Bild den gesamten Bereich abdeckt */
+    background-position: center; /* Zentriert das Bild */
+    background-attachment: fixed; /* Optional: Fixiert das Bild beim Scrollen */
+}
+
+.buttons {
+    text-align: center;
+}
+
+.footer {
+  background-color: #333; /* Beispielhafte Hintergrundfarbe für den Footer */
+  color: #fff; /* Beispielhafte Textfarbe für den Footer */
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 
 .navbar {
   margin: 0;
@@ -10,6 +35,75 @@
   background-position: center; /* Zentriert das Bild */
   background-attachment: fixed; /* Optional: Fixiert das Bild beim Scrollen */
 }
+
+#header {
+    background-image: url(images/background.jpg);
+    text-align: center;
+    font-size: xx-large;
+}
+
+#contact
+    {
+        box-sizing: border-box;
+      }
+      
+      /* Style inputs */
+      input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      
+      input[type=Abschicken] {
+        text-align: center;
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      .container {
+        border-radius: 5px;
+        /* background-color: #ffffff; */
+        padding: 10px;
+      }
+      
+      .column {
+        float: left;
+        width: 50%;
+        margin-top: 6px;
+        padding: 20px;
+      }
+      
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column, input[type=submit] {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+
+      .navbarfooter {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
 
 .popup {
 overlay {
