@@ -1,3 +1,28 @@
+body {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('images/background.jpg'); /* Name Ihres Bildes */
+    background-size: cover; /* Stellt sicher, dass das Bild den gesamten Bereich abdeckt */
+    background-position: center; /* Zentriert das Bild */
+    background-attachment: fixed; /* Optional: Fixiert das Bild beim Scrollen */
+}
+
+.buttons {
+    text-align: center;
+}
+
+.footer {
+  background-color: #333; /* Beispielhafte Hintergrundfarbe für den Footer */
+  color: #fff; /* Beispielhafte Textfarbe für den Footer */
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 
 .navbar {
   margin: 0;
@@ -105,4 +130,3 @@ overlay {
   box-shadow: 0 0 10px rgba(red, green, blue, alpha);
 }
 }
-
