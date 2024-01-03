@@ -24,16 +24,17 @@ body {
 }
 
 
+
 .login {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: url('images/background.jpg'); /* Name Ihres Bildes */
-  background-size: cover; /* Stellt sicher, dass das Bild den gesamten Bereich abdeckt */
-  background-position: center; /* Zentriert das Bild */
-  background-attachment: fixed; /* Optional: Fixiert das Bild beim Scrollen */
+  text-align: center;
+  font-size: xx-large;
+  background-image: url(images/background.jpg); 
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed; 
 }
 
 .ecoleaf {
@@ -110,13 +111,7 @@ body {
         }
       }
 
-      .navbarfooter {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-      }
+
 
 .popup {
 overlay {
