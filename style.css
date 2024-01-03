@@ -24,17 +24,17 @@ body {
 }
 
 
-/* .navbar {
+.ecoleaf {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: url('images/background.jpg'); 
+  text-align: center;
+  font-size: xx-large;
+  background-image: url(images/background.jpg); 
   background-size: cover; 
   background-position: center; 
   background-attachment: fixed; 
-} */
+}
 
 #header {
     background-image: url(images/background.jpg);
