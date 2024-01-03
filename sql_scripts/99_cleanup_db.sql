@@ -1,3 +1,3 @@
-DROP USER IF EXISTS 'Appuser'@'localhost';
+DROP USER IF EXISTS 'appuser'@'localhost';
 FLUSH PRIVILEGES;
 DROP DATABASE IF EXISTS Co2;
