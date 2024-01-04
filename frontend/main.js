@@ -15,27 +15,53 @@ function closePopup() {
 // Annahme: Die spezifischen CO2-Emissionswerte können je nach Fahrzeugtyp und Kraftstoff variieren.
 // Hier werden allgemeine Durchschnittswerte verwendet.
 
-let verkehrsmittel = ""
-
+let verkehrsmittel = "";
 
 document.getElementById('auto').addEventListener('click', function () {
     verkersmittel = "auto";
 })
 
-document.getElementById('öffentlich').addEventListener('click')
-document.getElementById('bus').addEventListener('click')
-document.getElementById('bahn').addEventListener('click')
+document.getElementById('öffentlich').addEventListener('click', function () {
+    verkehrsmittel = "öffentlich";
+});
 
-if (verkersmittel.includes("bus") && verkehrsmittel.includes("öffentlich")) {
-    verkersmittel = "bus";
-}
-if (verkersmittel.includes("bahn") && verkehrsmittel.includes("öffentlich")) {
-    verkersmittel = "bahn";
-}
+document.getElementById('bus').addEventListener('click', function () {
+    if (verkehrsmittel === "öffentlich") {
+        verkehrsmittel = "bus";
+    }
+});
+
+document.getElementById('bahn').addEventListener('click', function () {
+    if (verkehrsmittel === "öffentlich") {
+        verkehrsmittel = "bahn";
+    }
+});
+
+let kraftstoff ="";
+
+document.getElementById('benzin').addEventListener('click', function () {
+    kraftstoff = "benzin";
+})
+document.getElementById('diesel').addEventListener('click', function () {
+    kraftstoff = "diesel";
+})
+document.getElementById('hybrid').addEventListener('click', function () {
+    kraftstoff = "hybrid";
+})
+document.getElementById('elektro').addEventListener('click', function () {
+    kraftstoff = "elektro";
+})
+document.getElementById('gas').addEventListener('click', function () {
+    kraftstoff = "gas";
+})
+
+let verbrauchPro100km = document.getElementById ('tank100').value;
+let jahreskilometer = document.getElementById ('kilometer/auto').value;
+let personenkilometer = document.getElementById ('kilometer/öffentlich').value;
 
 
 // Funktion zur Berechnung der CO2-Emissionen für die Auto-Nutzung
-function co2berechnung(verkehrsmittel, kraftstoff, verbrauchPro100km, jahreskilometer, maxico2) {
+function co2berechnung(verkehrsmittel, kraftstoff, verbrauchPro100km, jahreskilometer, personenkilometer) {
     let co2EmissionenProLiter; // CO2-Emissionen pro Liter Kraftstoff
     let verbrauchInLiter; // Verbrauch in Litern pro Jahr
     let co2Emissionen; // Gesamte CO2-Emissionen pro Jahr
@@ -60,9 +86,9 @@ function co2berechnung(verkehrsmittel, kraftstoff, verbrauchPro100km, jahreskilo
         co2Emissionen = verbrauchInLiter * co2EmissionenProLiter;
     } else if (verkehrsmittel === 'Bus') {
 
-        co2Emissionen = jahreskilometer * 23;
+        co2Emissionen = personenkilometer * 23;
     } else if (verkehrsmittel === 'Bahn') {
-        co2Emissionen = jahreskilometer * 36
+        co2Emissionen = personenkilometer * 36
     }
     return co2Emissionen;
 }
