@@ -27,9 +27,9 @@ function co2berechnung(verkehrsmittel, kraftstoff, verbrauchPro100km, jahreskilo
         } else if (kraftstoff === 'Diesel') {
             co2EmissionenProLiter = 2640 ; // Menge für Diesel in g CO2 pro Liter
         } else if (kraftstoff === 'Hybrid') {
-            co2EmissionenProLiter = ; // 
+            co2EmissionenProLiter = 1111; // 
         } else if (kraftstoff === 'Elektro') {
-            co2EmissionenProLiter = ; // 
+            co2EmissionenProLiter = 1111; // 
         } else if (kraftstoff === 'LPG') {
             co2EmissionenProLiter = 1660; // Menge für LPG in g CO2 pro Liter
         } else if (kraftstoff === 'CNG') {
@@ -42,17 +42,12 @@ function co2berechnung(verkehrsmittel, kraftstoff, verbrauchPro100km, jahreskilo
     } else if (verkehrsmittel === 'Bus') {
 
        co2Emissionen= jahreskilometer * 23;
-    } else if (verkehrsmittel === 'Zug') {
+    } else if (verkehrsmittel === 'Bahn') {
         co2Emissionen= jahreskilometer * 36
     }
-
-    
-
-
-
     return co2Emissionen;
 }
 
 // Beispielaufruf der Funktion
-const autoCO2Emissionen = berechneAutoCO2Emissionen('Eigenes Fahrzeug', 'Benzin', 7.5, 15000);
+const autoCO2Emissionen = co2berechnung('Auto', 'Benzin', 7.5, 15000);
 console.log(`Geschätzte CO2-Emissionen für die Auto-Nutzung: ${autoCO2Emissionen} kg CO2 pro Jahr`);
