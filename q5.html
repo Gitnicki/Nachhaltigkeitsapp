@@ -19,23 +19,62 @@
             </a>
         </div>
     </nav>
-    <img src="images/background.jpg" alt="background"  class="src"></a>
 
-
-    <footer class="navbar navbar-expand-lg bg-secondary footer" style="height: 60px;" data-bs-theme="dark">
-        <div class="container-fluid">
-            <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
-                <li class="nav-item px-2"><a href="index.html" target="_self" class="nav-link">Home</a>
-                <li class="nav-item px-2"><a href="datenschutz.html" target="_self" class="nav-link">Datenschutz</a></li>
-                <li class="nav-item px-2"><a href="contact.html" target="_self" class="nav-link">Kontakt</a></li>
-                <li class="nav-item px-2"><a href="impressum.html" target="_self" class="nav-link">Impressum</a></li>
-                </li>
-            </ul>
+<!-- https://getbootstrap.com/docs/5.3/components/scrollspy/#how-it-works -->
+    <div class="row">
+        <div class="col-3">
+          <div id="simple-list-example" class="d-flex flex-column gap-5 simple-list-example-scrollspy text-center">
+            <a class="p-1 rounded" href="#simple-list-item-1" style="color: antiquewhite;">Frage 1</a>
+          </div>
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    </body>
+        <div class="col-8">
+          <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+            <h4 id="simple-list-item-1" style="color: antiquewhite;">Frage 1</h4>
+            
+            <div class="container mt-4">
+                <div class="bg-light">
+                <h1>Welche Ernährungsform verfolgen Sie?</h1>
+                <div class="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
+                    <div onclick="window.location = '#simple-list-item-2';">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio9" autocomplete="off" checked>
+                    <label class="btn btn-outline-secondary" for="btnradio9">Vegan</label>
+                    </div>
+                    <div onclick="window.location = '#simple-list-item-2';">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio10" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio10">Vegetarisch</label>
+                    </div>
+                    <div onclick="window.location = '#simple-list-item-2';">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio11" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="btnradio11">Flexitarier</label>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+            <a href="co2.html">
+            <button type="button" class="btn btn-green"> <img src="images/rechter-pfeil.png" title="Pfeil Icons erstellt von rang - Flaticon" width="100px" height="100px"/></button></a>
+            <br><br><br>
+        </div>
+    </div>
+</div>
+
+
+
+
+<footer class="navbar navbar-expand-lg bg-secondary footer" style="height: 60px;" data-bs-theme="dark">
+    <div class="container-fluid">
+        <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+            <li class="nav-item px-2"><a href="index.html" target="_self" class="nav-link">Home</a>
+            <li class="nav-item px-2"><a href="datenschutz.html" target="_self" class="nav-link">Datenschutz</a></li>
+            <li class="nav-item px-2"><a href="contact.html" target="_self" class="nav-link">Kontakt</a></li>
+            <li class="nav-item px-2"><a href="impressum.html" target="_self" class="nav-link">Impressum</a></li>
+            </li>
+        </ul>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
     
-    </html>
+</html>

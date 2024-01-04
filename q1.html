@@ -20,6 +20,114 @@
         </div>
     </nav>
 
+<!-- https://getbootstrap.com/docs/5.3/components/scrollspy/#how-it-works -->
+    <div class="row">
+        <div class="col-3">
+          <div id="simple-list-example" class="d-flex flex-column gap-5 simple-list-example-scrollspy text-center">
+            <a class="p-1 rounded" href="#simple-list-item-1" style="color: antiquewhite;">Frage 1</a>
+            <a class="p-1 rounded" href="#simple-list-item-2" style="color: antiquewhite;">Frage 2</a>
+            <a class="p-1 rounded" href="#simple-list-item-3" style="color: antiquewhite;">Frage 3</a>
+            <a class="p-1 rounded" href="#simple-list-item-4" style="color: antiquewhite;">Frage 4</a>
+            <a class="p-1 rounded" href="#simple-list-item-5" style="color: antiquewhite;">Frage 5</a>
+            <a class="p-1 rounded" href="#simple-list-item-6" style="color: antiquewhite;">Frage 6</a>
+          </div>
+        </div>
+        <div class="col-8">
+          <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+            <h4 id="simple-list-item-1" style="color: antiquewhite;">Frage 1</h4>
+
+            <div class="container mt-4">
+                <div class="bg-light">
+                <h1>Nutzen Sie ein eigenes Fahrzeug oder öffentliche Verkehrsmittel?</h1>
+                <div>
+                    <a href="#simple-list-item-2"><button type="button" class="btn btn-green"> <img src="images/auto.png" title="Automobil Icons erstellt von riajulislam - Flaticon" width="50px" height="50px" /></button></a>
+                    <a href="#simple-list-item-5"><button type="button"  class="btn btn-green"> <img src="images/bus.png" title="Elektrischer bus Icons erstellt von Pop Vectors - Flaticon" width="50px" height="50px" /></button></a>
+                    <a href="q2.html"><button class="btn btn-secondary" type="button">Weder Noch</button></a>
+                </div>
+                </div>
+            </div>
+            <h4 id="simple-list-item-2" style="color: antiquewhite;">Frage 2</h4>
+
+            <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Welchen Kraftstoff tanken Sie?</h1>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button">Benzin</button></a>
+                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button">Diesel</button></a>
+                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button">Hybrid</button></a>
+                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button">Elektro</button></a>
+                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button">Gas</button></a>
+                <br>
+            </div>
+            </div>
+            </div>
+            <h4 id="simple-list-item-3" style="color: antiquewhite;">Frage 3</h4>
+
+            <div class="container mt-4">
+                <div class="bg-light">
+                <h1>Nennen Sie uns Ihren kombinierten Verbrauch auf 100km.</h1>
+                <br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                      <div class="input-group mb-1">
+                          <input type="text" class="" placeholder="l/100km" aria-label="l/100km" aria-describedby="button-addon2">
+                          <a href="#simple-list-item-4"><button class="btn btn-outline-secondary" type="button" id="button-addon2">Weiter</button></a>
+                        </div>
+                        <br>
+                </div>
+                </div>
+            </div>
+            <h4 id="simple-list-item-4" style="color: antiquewhite;">Frage 4</h4>  
+
+            <div class="container mt-4">
+                <div class="bg-light">
+                <h1>Wie viel Kilometer fahren Sie jährlich? <!--ggf. täglich --></h1>
+                <br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <div class="input-group mb-1">
+                        <input type="text" class="" placeholder="km" aria-label="km" aria-describedby="button-addon2">
+                        <a href="q2.html"><button class="btn btn-outline-secondary" type="button" id="button-addon2">Weiter</button></a>
+                      </div>
+                      <br>
+                </div>
+                </div>
+            </div>
+            <h4 id="simple-list-item-5" style="color: antiquewhite;">Frage 5</h4>
+
+            <div class="container mt-4">
+                <div class="bg-light">
+                    <h1>Welches Verkehrsmittel nutzen sie vorwiegend?</h1>
+                    <br>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <a href="#simple-list-item-6"><button class="btn btn-secondary" type="button">Bahn</button></a>
+                        <a href="#simple-list-item-6"><button class="btn btn-secondary" type="button">Bus</button></a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <h4 id="simple-list-item-6" style="color: antiquewhite;">Frage 6</h4>
+
+            <div class="container mt-4">
+                <div class="bg-light">
+                <h1>Wie viel Kilometer fahren Sie jährlich? <!--ggf. täglich --></h1>
+                <br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <div class="input-group mb-1">
+                        <input type="text" class="" placeholder="km" aria-label="km" aria-describedby="button-addon2">
+                        <a href="q2.html"><button class="btn btn-outline-secondary" type="button" id="button-addon2">Weiter</button></a>
+                      </div>
+                      <br>
+                </div>
+                </div>
+                
+            </div>
+            <a href="q2.html">
+            <button type="button" class="btn btn-green"> <img src="images/rechter-pfeil.png" title="Pfeil Icons erstellt von rang - Flaticon" width="100px" height="100px"/></button></a>
+            <br><br><br>
+        </div>
+    </div>
+</div>
+
 
 
 
@@ -39,4 +147,4 @@
     crossorigin="anonymous"></script>
 </body>
     
-    </html>
+</html>

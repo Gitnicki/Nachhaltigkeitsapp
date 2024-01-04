@@ -19,7 +19,133 @@
             </a>
         </div>
     </nav>
-    <img src="images/background.jpg" alt="background"  class="src"></a>
+
+<!-- https://getbootstrap.com/docs/5.3/components/scrollspy/#how-it-works -->
+<div class="row">
+    <div class="col-3">
+      <div id="simple-list-example" class="d-flex flex-column gap-5 simple-list-example-scrollspy text-center">
+        <a class="p-1 rounded" href="#simple-list-item-1" style="color: antiquewhite;">Frage 1</a>
+        <a class="p-1 rounded" href="#simple-list-item-2" style="color: antiquewhite;">Frage 2</a>
+        <a class="p-1 rounded" href="#simple-list-item-3" style="color: antiquewhite;">Frage 3</a>
+        <a class="p-1 rounded" href="#simple-list-item-4" style="color: antiquewhite;">Frage 4</a>
+        <a class="p-1 rounded" href="#simple-list-item-5" style="color: antiquewhite;">Frage 5</a>
+        <a class="p-1 rounded" href="#simple-list-item-6" style="color: antiquewhite;">Frage 6</a>
+        <a class="p-1 rounded" href="#simple-list-item-7" style="color: antiquewhite;">Frage 7</a>
+      </div>
+    </div>
+    <div class="col-8">
+      <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+        <h4 id="simple-list-item-1" style="color: antiquewhite;">Frage 1</h4>
+
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Wie oft nutzen Sie Ihre Waschmaschine pro Woche?</h1>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <!-- https://getbootstrap.com/docs/5.3/forms/range/#overview -->
+                <label for="customRange3" class="form-label">1 - 14</label>
+                <input type="range" class="form-range" min="1" max="14" step="1" value="0" id="customRange3">
+                <a href="#simple-list-item-2"><button class="btn btn-secondary" type="button">Weiter</button></a>
+                <br>
+             </div>
+            </div>
+        </div>
+        <h4 id="simple-list-item-2" style="color: antiquewhite;">Frage 2</h4> 
+
+        <div class="container mt-4">
+        <div class="bg-light">
+        <h1>Wie oft nutzen Sie den Geschirrspüler pro Woche?</h1>
+        <br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+           <!-- https://getbootstrap.com/docs/5.3/forms/range/#overview -->
+           <label for="customRange3" class="form-label">0 - 14</label>
+           <input type="range" class="form-range" min="0" max="14" step="1" value="0" id="customRange3">
+           <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button">Weiter</button></a>
+           <br>
+        </div>
+        </div>
+        </div>
+        <h4 id="simple-list-item-3" style="color: antiquewhite;">Frage 3</h4>
+
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Wie oft Duschen Sie pro Woche?</h1>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+               <!-- https://getbootstrap.com/docs/5.3/forms/range/#overview -->
+               <label for="customRange3" class="form-label">0 - 7</label>
+               <input type="range" class="form-range" min="0" max="7" step="1" value="0" id="customRange3">
+               <a href="#simple-list-item-4"><button class="btn btn-secondary" type="button">Weiter</button></a>
+               <br>
+            </div>
+            </div>
+            </div>
+        <h4 id="simple-list-item-4" style="color: antiquewhite;">Frage 4</h4>  
+
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Wie oft Baden Sie pro Woche?</h1>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+               <!-- https://getbootstrap.com/docs/5.3/forms/range/#overview -->
+               <label for="customRange3" class="form-label">0 - 7</label>
+               <input type="range" class="form-range" min="0" max="7" step="1" value="0" id="customRange3">
+               <a href="#simple-list-item-5"><button class="btn btn-secondary" type="button">Weiter</button></a>
+               <br>
+            </div>
+            </div>
+            </div>
+        <h4 id="simple-list-item-5" style="color: antiquewhite;">Frage 5</h4>
+
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Wie häufig reinigen Sie Ihre Räumlichkeiten pro Woche?</h1>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+               <!-- https://getbootstrap.com/docs/5.3/forms/range/#overview -->
+               <label for="customRange3" class="form-label">1 - 7</label>
+               <input type="range" class="form-range" min="1" max="7" step="1" value="0" id="customRange3">
+               <a href="#simple-list-item-6"><button class="btn btn-secondary" type="button">Weiter</button></a>
+               <br>
+            </div>
+            </div>
+            </div>
+        <h4 id="simple-list-item-6" style="color: antiquewhite;">Frage 6</h4>
+
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Besitzen Sie einen Garten, den Sie regelmäßig pflegen/gießen?</h1>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+               <!-- https://getbootstrap.com/docs/5.3/forms/range/#overview -->
+               <label for="customRange3" class="form-label">0 - 7</label>
+               <input type="range" class="form-range" min="0" max="7" step="1" value="0" id="customRange3">
+               <a href="#simple-list-item-7"><button class="btn btn-secondary" type="button">Weiter</button></a>
+               <br>
+            </div>
+            </div>
+            </div>
+            <h4 id="simple-list-item-7" style="color: antiquewhite;">Frage 7</h4>
+
+            <div class="container mt-4">
+                <div class="bg-light">
+                <h1>Wie häufig kochen Sie selbst?</h1>
+                <br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                   <!-- https://getbootstrap.com/docs/5.3/forms/range/#overview -->
+                   <label for="customRange3" class="form-label">0 - 14</label>
+                   <input type="range" class="form-range" min="0" max="14" step="1" value="0" id="customRange3">
+                <br>
+                </div>
+                </div>
+                </div>
+                
+        </div>
+        <a href="q4.html">
+        <button type="button" class="btn btn-green"> <img src="images/rechter-pfeil.png" title="Pfeil Icons erstellt von rang - Flaticon" width="100px" height="100px"/></button></a>
+        <br><br><br>
+    </div>
+</div>
+</div>
 
 
     <footer class="navbar navbar-expand-lg bg-secondary footer" style="height: 60px;" data-bs-theme="dark">
