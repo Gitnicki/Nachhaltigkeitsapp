@@ -16,26 +16,39 @@ function closePopup() {
 // Hier werden allgemeine Durchschnittswerte verwendet.
 
 // Funktion zur Berechnung der CO2-Emissionen für die Auto-Nutzung
-function berechneAutoCO2Emissionen(verkehrsmittel, kraftstoff, verbrauchPro100km, jahreskilometer) {
+function co2berechnung(verkehrsmittel, kraftstoff, verbrauchPro100km, jahreskilometer,maxico2) {
     let co2EmissionenProLiter; // CO2-Emissionen pro Liter Kraftstoff
     let verbrauchInLiter; // Verbrauch in Litern pro Jahr
     let co2Emissionen; // Gesamte CO2-Emissionen pro Jahr
+    if (verkehrsmittel === 'Auto') {
+        // Annahme: CO2-Emissionswerte für verschiedene Kraftstoffe
+        if (kraftstoff === 'Benzin') {
+            co2EmissionenProLiter = 2390; // Menge für Benzin in g CO2 pro Liter
+        } else if (kraftstoff === 'Diesel') {
+            co2EmissionenProLiter = 2640 ; // Menge für Diesel in g CO2 pro Liter
+        } else if (kraftstoff === 'Hybrid') {
+            co2EmissionenProLiter = ; // 
+        } else if (kraftstoff === 'Elektro') {
+            co2EmissionenProLiter = ; // 
+        } else if (kraftstoff === 'LPG') {
+            co2EmissionenProLiter = 1660; // Menge für LPG in g CO2 pro Liter
+        } else if (kraftstoff === 'CNG') {
+            co2EmissionenProLiter = 2666; // Menge für CNG in g CO2 pro Liter
+        }
+        // Berechnung des Verbrauchs in Litern pro Jahr
+    verbrauchInLiter = (verbrauchPro100km / 100) * jahreskilometer;
+     // Berechnung der Gesamten CO2-Emissionen pro Jahr
+     co2Emissionen = verbrauchInLiter * co2EmissionenProLiter;
+    } else if (verkehrsmittel === 'Bus') {
 
-    // Annahme: CO2-Emissionswerte für verschiedene Kraftstoffe
-    if (kraftstoff === 'Benzin') {
-        co2EmissionenProLiter = 2.31; // Beispielwert für Benzin in kg CO2 pro Liter
-    } else if (kraftstoff === 'Diesel') {
-        co2EmissionenProLiter = 2.68; // Beispielwert für Diesel in kg CO2 pro Liter
-    } else {
-        // Wenn der Kraftstoff nicht erkannt wird, hier einen Standardwert verwenden
-        co2EmissionenProLiter = 2.5; // Beispielwert für andere Kraftstoffe
+       co2Emissionen= jahreskilometer * 23;
+    } else if (verkehrsmittel === 'Zug') {
+        co2Emissionen= jahreskilometer * 36
     }
 
-    // Berechnung des Verbrauchs in Litern pro Jahr
-    verbrauchInLiter = (verbrauchPro100km / 100) * jahreskilometer;
+    
 
-    // Berechnung der Gesamten CO2-Emissionen pro Jahr
-    co2Emissionen = verbrauchInLiter * co2EmissionenProLiter;
+
 
     return co2Emissionen;
 }
