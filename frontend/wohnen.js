@@ -1,6 +1,6 @@
-function calculateCO2perkwH(strommix, durationInKwh) {
+function calculateCO2perKwh(strommix, durationInKwh) {
     // CO2-Emissionen in Gramm pro Stunde für verschiedene Aktivitäten
-    const emissionsPerstrommix = {
+    const emissionsPerKwh = {
       erneuerbar: 0, // Durchschnittswert Gramm Co2
       ausgeglichen: 300, // Durchschnittswert Gramm Co2
       gas: 500, // Durchschnittswert Gramm Co2
@@ -18,55 +18,136 @@ function calculateCO2perkwH(strommix, durationInKwh) {
     }
   }
 
-  function calculateCO2perHkwh(activity, durationInYears) {
+  function calculateCO2perkwh(heizform, durationInkwh) {
     // CO2-Emissionen in Gramm pro Jahr für verschiedene Aktivitäten
-    const emissionsPerYear = {
-      zeitungP: 91250, // Durchschnittswert Zeitung pro Jahr
-      zeitungD: 54750, // Durchschnittswert Zeitung pro Jahr
-      hund: 725000, // Durchschnittswert pro Jahr
-      katze: 400000, // Durchschnittswert pro Jahr
-      pferd: 3100000, // Durchschnittswert pro Jahr
-      kleintier: 100000, // Durchschnittswert pro Jahr
-      vogel: 25000, // Durchschnitsswert pro Jahr
+    const emissionsPerkwh = {
+      heizöl: 260, // Durchschnittswert Co2 pro kwh
+      erdgas: 230, // Durchschnittswert Co2 pro kwh
+      brennholz: 575, // Durchschnitsswert Co2 pro kwh
+      strom: 420, // Durchschnittswert Co2 pro kwh
     }
 
      // Überprüfe, ob die Aktivität in den CO2-Werten enthalten ist
-     if (activity in emissionsPerYear) {
+     if (heizform in emissionsPerkwh) {
       // Berechne die CO2-Emissionen für die angegebene Dauer
-      const totalCO2 = emissionsPerYear[activity] * durationInYears;
+      const totalCO2 = emissionsPerkwh[heizform] * durationInkwh;
       return totalCO2.toFixed(2); // Begrenze die Anzahl der Dezimalstellen
     } else {
       return "Aktivität nicht gefunden";
     }
-  };  
+  }; 
   
-  // Beispielaufruf
-  const co2standPC = calculateCO2perHour("standPC", 2);
-  console.log(`CO2-Emissionen beim Zocken am StandPC für 2 Stunden: ${co2standPC} Gramm`);
+  var anzahlp = document.getElementById('anzahlp');
+  anzahlpb.addEventListener('click', function (){
+    anzahlp = "anzahlp";
+    console.log(anzahlp);
+  });
+
+  var anzahlstromkwh=0
+  document.getElementById('anzahlstromkwhb').addEventListener('click', function (){
+    let anzahlstromkwh = document.getElementById ('anzahlstromkwh').value;
+    console.log(anzahlstromkwh);
+  });
   
-  const co2Laptop = calculateCO2perHour("Laptop", 1);
-  console.log(`CO2-Emissionen beim Zocken am Laptop für 1 Stunde: ${co2Laptop} Gramm`);
+  var strommix = "";
 
-  const co2NintendoSwitch = calculateCO2perHour("NintendoSwitch", 1);
-  console.log(`CO2-Emissionen beim Zocken an der NintendoSwitch für 1 Stunde: ${co2NintendoSwitch} Gramm`);
+  var erneuerbar = document.getElementById('strommixerneuerbar');
+  erneuerbar.addEventListener('click', function () {
+    strommix = "strommixerneuerbar";
+    console.log(strommix);
+  });
 
-  const co2XboxOne = calculateCO2perHour("XboxOne", 1);
-  console.log(`CO2-Emissionen beim Zocken an der XboxOne für 1 Stunde: ${co2XboxOne} Gramm`);
+  var gas = document.getElementById('strommixgas');
+  gas.addEventListener('click', function () {
+    strommix = "strommixgas";
+    console.log(strommix);
+  });
 
-  const co2PS5 = calculateCO2perHour("PS5", 1);
-  console.log(`CO2-Emissionen beim Zocken an der Playstation5 für 1 Stunde: ${co2PS5} Gramm`);
+  var kohle = document.getElementById('strommixkohle');
+  kohle.addEventListener('click', function () {
+    strommix = "strommixkohle";
+    console.log(strommix);
+  });
 
-  const co2PS4 = calculateCO2perHour("PS4", 1);
-  console.log(`CO2-Emissionen beim Zocken an der Playstation4 für 1 Stunde: ${co2PS4} Gramm`);
+  var ausgeglichen = document.getElementById('strommixausgeglichen');
+  ausgeglichen.addEventListener('click', function () {
+    strommix = "strommixausgeglichen";
+    console.log(strommix);
+  });
 
-  const co2streaming = calculateCO2perHour("streaming", 1);
-  console.log(`CO2-Emissionen beim Streaming für 1 Stunde: ${co2streaming} Gramm`);
+  var anzahlheizkwh=0
+  document.getElementById('anzahlheizkwhb').addEventListener('click', function (){
+    let anzahlstromkwh = document.getElementById ('anzahlheizkwh').value;
+    console.log(anzahlstromkwh);
+  });
 
-  const co2socialMedia = calculateCO2perHour("socialMedia", 1);
-  console.log(`CO2-Emissionen beim Nutzen von Social Media für 1 Stunde: ${co2socialMedia} Gramm`);
+  var heizform = "";
 
-  
-  
+  var heizoel = document.getElementById('heizformheizoel');
+    heizoel.addEventListener('click', function () {
+    heizform = "heizformheizoel";
+    console.log(heizform);
+  });
+
+  var erdgas = document.getElementById('heizformerdgas');
+  erdgas.addEventListener('click', function () {
+    heizform = "heizformerdgas";
+    console.log(heizform);
+  });
+
+  var brennholz = document.getElementById('heizformbrennholz');
+  brennholz.addEventListener('click', function () {
+    heizform = "heizformbrennholz";
+    console.log(heizform);
+  });
+
+  var strom = document.getElementById('heizformstrom');
+  strom.addEventListener('click', function () {
+    heizform = "heizformstrom";
+    console.log(heizform);
+  });
+ 
+  function co2berechnung(anzahlp, anzahlheizkwh, anzahlstromkwh, strommix, heizform){
+    let co2EmissionenProKwh; // CO2-Emissionen pro kwh
+    let genutztestromkwh; // angegebene strom kwh pro Jahr
+    let genutzteheizkwh; // angegebene heiz kwh pro Jahr
+    let co2Emissionenstrom; // Gesamte CO2-Emissionen Strom pro Jahr
+    let co2Emissionenheiz; // Gesamte CO2-Emissionen Heiz pro Jahr
+    let gesamtEmissionen; // Gesamte CO2-Emissionen im Bereich Wohnen
+
+    if (strommix === 'erneuerbar') {
+       co2EmissionenProKwh = 0; // Menge für erneuerbaren Strommix in g CO2 pro kwh
+    } else if (strommix === 'ausgeglichen') {
+      co2EmissionenProKwh = 300; // Menge für ausgegeglichenen Strommix in g CO2 pro kwh
+    } else if (strommix === 'gas') {
+      co2EmissionenProKwh = 500; // Menge für einen Strommix mit dem Großteil an Gas in g CO2 pro kwh
+    }  else if (strommix === 'kohle') {
+      co2EmissionenProKwh = 900; // Menge für einen Strommix mit dem Großteil an Kohle in g CO2 pro kwh
+    }
+
+    if (heizform === 'heizoel') {
+      co2EmissionenProKwh = 260; // Menge CO2 für eine kwh Heizöl
+    }  else if (heizform === 'erdgas') {
+      co2EmissionenProKwh = 230; // Menge CO2 für eine kwh Erdgas
+    }  else if (heizform === 'brennholz') {
+      co2EmissionenProKwh = 575; // Menge CO2 für eine kwh Brennholz
+    }  else if (heizform === 'strom') {
+      co2EmissionenProKwh = 420; // Menge CO2 für eine kwh Strom
+      }
+      }
+
+    // Berechnung der CO2 Emissionen in g pro Jahr
+    co2Emissionenstrom = genutztestromkwh * co2EmissionenProKwh;
+
+    return co2Emissionenstrom;
+
+    co2Emissionenheiz = genutzteheizkwh * co2EmissionenProKwh;
+
+    return co2Emissionenheiz;
 
 
+    return gesamtEmissionen;
 
+// Anruf der Funktion
+const gesamtEmissionen = co2berechnung(anzahlp, anzahlheizkwh, anzahlstromkwh, strommix, heizform);
+console.log('Geschätzte CO2-Emissionen für den Bereich Wohnen:' , gesamtEmissionen , 'g CO2 pro Jahr');

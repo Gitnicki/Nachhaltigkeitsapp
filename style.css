@@ -36,11 +36,6 @@ body {
   background-attachment: fixed; 
 }
 
-#header {
-    background-image: url(images/background.jpg);
-    text-align: center;
-    font-size: xx-large;
-}
 
 #contact
     {
@@ -213,3 +208,36 @@ overlay {
 .register-link p a:hover{
   text-decoration: underline;
 }
+
+.slider-container {
+  position: relative;
+  width: 300px;
+}
+
+.slider {
+  width: 100%;
+}
+
+.slider-value {
+  position: absolute;
+  top: -30px
+left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.slider-container:hover .slider-value {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<div class="slider-container">
+<input type="range" min="1" max="100" value="50" class="slider" id="mySlider">
+<div class="slider-value" id="sliderValue">50</div>
+</div>
