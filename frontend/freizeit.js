@@ -1,6 +1,7 @@
 // Funktion zur Berechnung der CO2-Emissionen für die Auto-Nutzung
-function co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisstreaming, streamingHours, dropdownissocialmedia, socialHours) {
+function co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisstreaming, streamingHours, dropdownissocialmedia, socialHours, dropdowniszeitung, dropdowniszeitungdp) {
   let co2EmissionenProStunde; // CO2-Emissionen pro Stunde
+  let co2EmissionenProNutzung; // CO2-Emissionen pro Nutzung der Zeitung
   let co2Emissionen = 0; // Gesamte CO2-Emissionen pro Woche
     if (dropdownvalue === "Ja") {
       console.log("test");
@@ -29,6 +30,14 @@ function co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisst
         console.log(socialHours);
         co2Emissionen += 138 * socialHours;
       }
+      if (dropdowniszeitung === "Ja") {
+        if (dropdowniszeitungdp === 'Digital') {
+          co2EmissionenProNutzung = 150; 
+      } else if (dropdowniszeitungdp === 'Print') {
+          co2EmissionenProNutzung = 250; 
+      }
+      co2Emissionen += co2EmissionenProNutzung * 7;
+    }
   
     }
     if (dropdownisstreaming === "Ja") {
@@ -39,12 +48,38 @@ function co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisst
         console.log(socialHours);
         co2Emissionen += 138 * socialHours;
       }
+      if (dropdowniszeitung === "Ja") {
+        if (dropdowniszeitungdp === 'Digital') {
+          co2EmissionenProNutzung = 150; 
+      } else if (dropdowniszeitungdp === 'Print') {
+          co2EmissionenProNutzung = 250; 
+      }
+      co2Emissionen += co2EmissionenProNutzung * 7;
+    }
     }
 
     if (dropdownissocialmedia === "Ja") {
       console.log(socialHours);
       co2Emissionen += 138 * socialHours;
+
+      if (dropdowniszeitung === "Ja") {
+        if (dropdowniszeitungdp === 'Digital') {
+          co2EmissionenProNutzung = 150; 
+      } else if (dropdowniszeitungdp === 'Print') {
+          co2EmissionenProNutzung = 250; 
+      }
+      co2Emissionen += co2EmissionenProNutzung * 7;
     }
+    }
+
+    if (dropdowniszeitung === "Ja") {
+      if (dropdowniszeitungdp === 'Digital') {
+        co2EmissionenProNutzung = 150; 
+    } else if (dropdowniszeitungdp === 'Print') {
+        co2EmissionenProNutzung = 250; 
+    }
+    co2Emissionen += co2EmissionenProNutzung * 7;
+  }
 
       
   console.log(co2Emissionen);
@@ -61,7 +96,10 @@ document.getElementById('button-berechnen').addEventListener('click', function (
   const streamingHours = parseInt(document.getElementById('streamingh').value);
   const dropdownissocialmedia = document.getElementById('dropdownissocialmedia').value;
   const socialHours = parseInt(document.getElementById('socialh').value);
-  const co2berechnung = co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisstreaming, streamingHours, dropdownissocialmedia, socialHours);
+  const dropdowniszeitung = document.getElementById('dropdowniszeitung').value;
+  const dropdowniszeitungdp = parseInt(document.getElementById('dropdowniszeitungdp').value);
+
+  const co2berechnung = co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisstreaming, streamingHours, dropdownissocialmedia, socialHours, dropdowniszeitung, dropdowniszeitungdp);
   console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnung);
   });
 
