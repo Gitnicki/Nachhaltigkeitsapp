@@ -14,14 +14,14 @@
 
 // Hier werden allgemeine Durchschnittswerte verwendet.
 
-const container = document.getElementsByClassName('container mt-4');
-var gaming = "";
+// const container = document.getElementsByClassName('container mt-4');
+// var gaming = "";
 
-var dropdownvalue = document.getElementById('dropdownisgaming').value;
-console.log(dropdownvalue);
+// var dropdownvalue = document.getElementById('dropdownisgaming').value;
+// console.log(dropdownvalue);
 
-var platform = document.getElementById('platform').value;
-console.log(platform);
+// var platform = document.getElementById('platform').value;
+// console.log(platform);
 
 
 // var standPC = document.getElementById('standpc');
@@ -177,6 +177,9 @@ document.getElementById('gaminghb').addEventListener('click', () => {
 
 //Anruf der Funktion
 document.getElementById('button-berechnen').addEventListener('click', function () {
+  const dropdownvalue = document.getElementById('dropdownisgaming').value;
+  const platform = document.getElementById('platform').value;
+  const gamingHours = parseInt(document.getElementById('gamingh').value);
   const co2berechnung = co2berechnungperHour(gamingHours, dropdownvalue, platform);
   console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnung);
   });
