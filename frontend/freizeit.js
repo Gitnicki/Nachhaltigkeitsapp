@@ -1,3 +1,26 @@
+window.onload = function () {
+  showPopup();
+}
+
+function showPopup() {
+  document.getElementById('overlay').style.display = 'block';
+  document.getElementById('popup').style.display = 'block';
+}
+
+function closePopup() {
+  document.getElementById('overlay').style.display = 'none';
+  document.getElementById('popup').style.display = 'none';
+}
+
+// Annahme: Die spezifischen CO2-Emissionswerte können je nach Fahrzeugtyp und Kraftstoff variieren.
+// Hier werden allgemeine Durchschnittswerte verwendet.
+
+let gaming = "";
+
+document.getElementById('standpc').addEventListener('click', function () {
+  gaming = "standpc";
+})
+
 function calculateCO2perHour(activity, durationInHours) {
     // CO2-Emissionen in Gramm pro Stunde für verschiedene Aktivitäten
     const emissionsPerHour = {
@@ -9,8 +32,9 @@ function calculateCO2perHour(activity, durationInHours) {
       PS4: 69, // Durchschnittswert PS4
       streaming: 130, // Durchschnittswert im Streaming
       socialMedia: 138, // Durchschnittswert im Social Media    
+
     };
-  
+    
     
     // Überprüfe, ob die Aktivität in den CO2-Werten enthalten ist
     if (activity in emissionsPerHour) {
@@ -45,10 +69,10 @@ function calculateCO2perHour(activity, durationInHours) {
   };  
   
   // Beispielaufruf
-  const co2standPC = calculateCO2perHour("standPC", 2);
+  const co2standPC = calculateCO2perHour("standPC", 5);
   console.log(`CO2-Emissionen beim Zocken am StandPC für 2 Stunden: ${co2standPC} Gramm`);
   
-  const co2Laptop = calculateCO2perHour("Laptop", 1);
+  const co2Laptop = calculateCO2perHour("Laptop", 2);
   console.log(`CO2-Emissionen beim Zocken am Laptop für 1 Stunde: ${co2Laptop} Gramm`);
 
   const co2NintendoSwitch = calculateCO2perHour("NintendoSwitch", 1);
@@ -69,23 +93,26 @@ function calculateCO2perHour(activity, durationInHours) {
   const co2socialMedia = calculateCO2perHour("socialMedia", 1);
   console.log(`CO2-Emissionen beim Nutzen von Social Media für 1 Stunde: ${co2socialMedia} Gramm`);
 
-// Event-Handler für Button, um CO2 pro Stunde zu berechnen
-    document.getElementById('calculateHourBtn').addEventListener('click', function () {
-        // Werte aus den Eingabefeldern abrufen
-        var activity = document.getElementById('activity').value;
-        var duration = parseFloat(document.getElementById('duration').value);
 
-        // Überprüfen, ob die Dauer eine gültige Zahl ist
-        if (!isNaN(duration)) {
-            // JavaScript-Funktion aufrufen und Ergebnis anzeigen
-            var result = calculateCO2perHour(activity, duration);
-            console.log(`CO2-Emissionen für ${activity} in ${duration} Stunden: ${result} Gramm`);
-        } else {
-            console.error('Ungültige Eingabe für Dauer');
-        }
-    });
 
-  
+
+
+// // Event-Handler für Button, um CO2 pro Stunde zu berechnen
+//     document.getElementById('calculateHourBtn').addEventListener('click', function () {
+//         // Werte aus den Eingabefeldern abrufen
+//         var activity = document.getElementById('activity').value;
+//         var duration = parseFloat(document.getElementById('duration').value);
+
+//         // Überprüfen, ob die Dauer eine gültige Zahl ist
+//         if (!isNaN(duration)) {
+//             // JavaScript-Funktion aufrufen und Ergebnis anzeigen
+//             var result = calculateCO2perHour(activity, duration);
+//             console.log(`CO2-Emissionen für ${activity} in ${duration} Stunden: ${result} Gramm`);
+//         } else {
+//             console.error('Ungültige Eingabe für Dauer');
+//         }
+//     });
+
 
 
 
