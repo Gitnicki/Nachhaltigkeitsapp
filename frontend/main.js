@@ -52,10 +52,17 @@ document.getElementById('diesel').addEventListener('click', function () {
     kraftstoff = "diesel";
     console.log(kraftstoff);
 });
-document.getElementById('hybrid-benzin').addEventListener('click', function () {
-    kraftstoff = "hybrid-benzin";
+// document.getElementById('hybrid-benzin').addEventListener('click', function () {
+//     kraftstoff = "hybrid-benzin";
+//     console.log(kraftstoff);
+// });
+document.getElementById('hybrid-button').addEventListener('click', function() {
+   
+    let option = document.getElementById('hybrid').value;
+    kraftstoff = option
     console.log(kraftstoff);
 });
+
 document.getElementById('elektro').addEventListener('click', function () {
     kraftstoff = "elektro";
     console.log(kraftstoff);
@@ -101,7 +108,7 @@ function co2berechnung(verkehrsmittel, kraftstoff, verbrauchPro100km, jahreskilo
             co2EmissionenProLiter = 1245; // 
         } else if (kraftstoff === 'elektro') {
             co2EmissionenProLiter = 563; // Menge für KW/H in g CO2 pro KW
-        } else if (kraftstoff === 'LPG') {
+        } else if (kraftstoff === 'gas') {
             co2EmissionenProLiter = 1660; // Menge für LPG in g CO2 pro Liter
         
         // } else if (kraftstoff === 'CNG') {
@@ -127,5 +134,5 @@ console.log('Geschätzte CO2-Emissionen für die Auto-Nutzung:', autoCO2Emission
 });
 
 // Beispielaufruf der Funktion
-// const autoCO2Emissionen = co2berechnung('Auto', 'Benzin', 7.5, 15000, null);
+// const autoCO2Emissionen = co2berechnung('Auto', 'hybrid', 7.5, 15000, null);
 // console.log('Geschätzte CO2-Emissionen für die Auto-Nutzung:', autoCO2Emissionen, 'g CO2 pro Jahr');
