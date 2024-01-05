@@ -15,11 +15,14 @@ function closePopup() {
 // Annahme: Die spezifischen CO2-Emissionswerte können je nach Fahrzeugtyp und Kraftstoff variieren.
 // Hier werden allgemeine Durchschnittswerte verwendet.
 
-let verkehrsmittel = "";
+const container = document.getElementsByClassName('container mt-4');
+var verkehrsmittel = "";
 
-document.getElementById('auto').addEventListener('click', function () {
-    verkersmittel = "auto";
-})
+var auto = document.getElementById('auto');
+auto.addEventListener('click', function () {
+    verkehrsmittel = "auto";
+    console.log(verkehrsmittel);
+});
 
 document.getElementById('öffentlich').addEventListener('click', function () {
     verkehrsmittel = "öffentlich";
@@ -28,36 +31,51 @@ document.getElementById('öffentlich').addEventListener('click', function () {
 document.getElementById('bus').addEventListener('click', function () {
     if (verkehrsmittel === "öffentlich") {
         verkehrsmittel = "bus";
+        console.log(verkehrsmittel);
     }
 });
 
 document.getElementById('bahn').addEventListener('click', function () {
     if (verkehrsmittel === "öffentlich") {
         verkehrsmittel = "bahn";
+        console.log(verkehrsmittel);
     }
 });
 
-let kraftstoff ="";
+var kraftstoff ="";
 
 document.getElementById('benzin').addEventListener('click', function () {
     kraftstoff = "benzin";
+    console.log(kraftstoff)
 })
 document.getElementById('diesel').addEventListener('click', function () {
     kraftstoff = "diesel";
 })
 document.getElementById('hybrid').addEventListener('click', function () {
     kraftstoff = "hybrid";
-})
+});
 document.getElementById('elektro').addEventListener('click', function () {
     kraftstoff = "elektro";
-})
+});
 document.getElementById('gas').addEventListener('click', function () {
     kraftstoff = "gas";
-})
-
-let verbrauchPro100km = document.getElementById ('tank100').value;
+});
+var verbrauchPro100km=0;
+document.getElementById('button-addon2').addEventListener('click', function () {
+    let verbrauchPro100km = document.getElementById ('tank100').value;
+    console.log(verbrauchPro100km);
+});
+var jahreskilometer=0
+document.getElementById('button-kilometer').addEventListener('click', function () {
 let jahreskilometer = document.getElementById ('kilometer/auto').value;
+console.log(jahreskilometer);
+});
+var personenkilometer = 0;
+document.getElementById('button-öffentlich').addEventListener('click', function () {
 let personenkilometer = document.getElementById ('kilometer/öffentlich').value;
+console.log(personenkilometer);
+});
+//console.log(personenkilometer);
 
 
 // Funktion zur Berechnung der CO2-Emissionen für die Auto-Nutzung
@@ -93,6 +111,9 @@ function co2berechnung(verkehrsmittel, kraftstoff, verbrauchPro100km, jahreskilo
     return co2Emissionen;
 }
 
-// Beispielaufruf der Funktion
-const autoCO2Emissionen = co2berechnung('Auto', 'Benzin', 7.5, 15000);
-console.log(`Geschätzte CO2-Emissionen für die Auto-Nutzung: ${autoCO2Emissionen} kg CO2 pro Jahr`);
+//Anruf der Funktion
+const autoCO2Emissionen = co2berechnung(verkehrsmittel , kraftstoff,verbrauchPro100km, jahreskilometer, personenkilometer);
+console.log('Geschätzte CO2-Emissionen für die Auto-Nutzung:' , autoCO2Emissionen , 'g CO2 pro Jahr');
+//Beispielaufruf der Funktion
+// const autoCO2Emissionen = co2berechnung('Auto', 'Benzin', 7.5, 15000, null);
+// console.log('Geschätzte CO2-Emissionen für die Auto-Nutzung:', autoCO2Emissionen, 'g CO2 pro Jahr');
