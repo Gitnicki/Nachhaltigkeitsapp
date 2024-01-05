@@ -12,78 +12,82 @@
 //   document.getElementById('popup').style.display = 'none';
 // }
 
-// // Hier werden allgemeine Durchschnittswerte verwendet.
+// Hier werden allgemeine Durchschnittswerte verwendet.
 
-// const container = document.getElementsByClassName('container mt-4');
-// var gaming = "";
+const container = document.getElementsByClassName('container mt-4');
+var gaming = "";
 
-// var standPC = document.getElementById('standpc');
-// document.addEventListener('click', function () {
-//   gaming = "standPC";
-// })
-// var Laptop = document.getElementById('gaminglaptop');
-// document.addEventListener('click', function () {
-//   gaming = "Laptop";
-// })
-// var NintendoSwitch = document.getElementById('nintendo');
-// document.addEventListener('click', function () {
-//   gaming = "NintendoSwitch";
-// })
-// var XboxOne = document.getElementById('xbox');
-// document.addEventListener('click', function () {
-//   gaming = "XboxOne";
-// })
-// var PS5 = document.getElementById('ps5');
-// document.addEventListener('click', function () {
-//   gaming = "PS5";
-// })
-// var PS4 = document.getElementById('ps4');
-// document.addEventListener('click', function () {
-//   gaming = "PS4";
-// })
-// var streaming = "";
-// document.getElementById('streamingh').addEventListener('click', function () {
-//   streaming = "streamingh";
-// });
+var dropdownvalue = document.getElementById('dropdownisgaming').value;
 
-// // Funktion zur Berechnung der CO2-Emissionen für die Auto-Nutzung
-// function co2berechnungperHour(gaming, gamingh, streamingh, socialh) {
-//   let co2EmissionenProStunde; // CO2-Emissionen pro Stunde
-//   let co2Emissionen; // Gesamte CO2-Emissionen pro Woche
-//   if (gaming === 'standpc') {
-//       if (gaming === 'standpc') {
-//           co2EmissionenProStunde = 210; 
-//       } else if (gaming === 'gaminglaptop') {
-//           co2EmissionenProStunde = 101; 
-//       } else if (gaming === 'nintendo') {
-//           co2EmissionenProStunde = 5;  
-//       } else if (gaming === 'ps5') {
-//           co2EmissionenProStunde = 90;  
-//       } else if (gaming === 'ps4') {
-//           co2EmissionenProStunde = 69; 
-//       } else if (gaming === 'xbox') {
-//           co2EmissionenProStunde = 63; 
-//       }
 
-//       // Berechnung der Gesamten CO2-Emissionen pro Woche
-//       co2Emissionen = gamingh * co2EmissionenProStunde;
 
-//   } else if (streaming === 'streaming') {
-//     co2EmissionenProStunde = 130;
-//       co2Emissionen = streamingh * co2EmissionenProStunde;
-//   } else if (socialmedia === 'socialmedia') {
-//     co2EmissionenProStunde = 138;
-//       co2Emissionen = socialh * co2EmissionenProStunde;
-//   }
-//   return co2Emissionen.toFixed(2); // Brgrenze die Anzahl der Dezimalstellen
-// }
-document.addEventListener('DOMContentLoaded', (event) => {
-  const gamingHoursbutton = document.getElementById('gaminghb');
-  gamingHoursbutton.addEventListener('click', () => {
-  const gamingHours = document.getElementById('gamingh').value;
+var standPC = document.getElementById('standpc');
+document.addEventListener('click', function () {
+  gaming = "standPC";
+})
+var Laptop = document.getElementById('gaminglaptop');
+document.addEventListener('click', function () {
+  gaming = "Laptop";
+})
+var NintendoSwitch = document.getElementById('nintendo');
+document.addEventListener('click', function () {
+  gaming = "NintendoSwitch";
+})
+var XboxOne = document.getElementById('xbox');
+document.addEventListener('click', function () {
+  gaming = "XboxOne";
+})
+var PS5 = document.getElementById('ps5');
+document.addEventListener('click', function () {
+  gaming = "PS5";
+})
+var PS4 = document.getElementById('ps4');
+document.addEventListener('click', function () {
+  gaming = "PS4";
+})
+var streaming = "";
+document.getElementById('streamingh').addEventListener('click', function () {
+  streaming = "streamingh";
+});
+
+// Funktion zur Berechnung der CO2-Emissionen für die Auto-Nutzung
+function co2berechnungperHour(gaming, gamingHours, dropdownvalue) {
+  let co2EmissionenProStunde; // CO2-Emissionen pro Stunde
+  let co2Emissionen; // Gesamte CO2-Emissionen pro Woche
+    if (dropdownvalue === "Ja") {
+      if (gaming === 'standpc') {
+          co2EmissionenProStunde = 210; 
+      } else if (gaming === 'gaminglaptop') {
+          co2EmissionenProStunde = 101; 
+      } else if (gaming === 'nintendo') {
+          co2EmissionenProStunde = 5;  
+      } else if (gaming === 'ps5') {
+          co2EmissionenProStunde = 90;  
+      } else if (gaming === 'ps4') {
+          co2EmissionenProStunde = 69; 
+      } else if (gaming === 'xbox') {
+          co2EmissionenProStunde = 63; 
+      }
+      // Berechnung der Gesamten CO2-Emissionen pro Woche
+      co2Emissionen = gamingHours * co2EmissionenProStunde;
+
+    }
+      
+  // } else if (streaming === 'streaming') {
+  //   co2EmissionenProStunde = 130;
+  //     co2Emissionen = streamingh * co2EmissionenProStunde;
+  // } else if (socialmedia === 'socialmedia') {
+  //   co2EmissionenProStunde = 138;
+  //     co2Emissionen = socialh * co2EmissionenProStunde;
+  // }
+  return co2Emissionen; // Brgrenze die Anzahl der Dezimalstellen
+}
+
+document.getElementById('gaminghb').addEventListener('click', () => {
+  const gamingHours = parseInt(document.getElementById('gamingh').value);
   console.log(gamingHours);
-  });
-  });
+});
+
 // function savegaminghours() {
 //   const gamingHours = document.getElementById('gamingh').innerHTML;
 //   console.log('gaminghours, ', gamingHours);
@@ -162,7 +166,15 @@ function calculateCO2perHour(activity, durationInHours) {
   const co2socialMedia = calculateCO2perHour("socialMedia", 1);
   console.log(`CO2-Emissionen beim Nutzen von Social Media für 1 Stunde: ${co2socialMedia} Gramm`);
 
-
+//Anruf der Funktion
+document.getElementById('button-berechnen').addEventListener('click', function () {
+  const co2berechnung = co2berechnungperHour(gaming , gamingh);
+  console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnung);
+  });
+  //Beispielaufruf der Funktion
+  // const autoCO2Emissionen = co2berechnung('Auto', 'Benzin', 7.5, 15000, null);
+  // console.log('Geschätzte CO2-Emissionen für die Auto-Nutzung:', autoCO2Emissionen, 'g CO2 pro Jahr');
+  
 
 
 
