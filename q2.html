@@ -62,12 +62,12 @@
             <div class="bg-light">
             <h1>Welche Platform nutzen Sie vorwiegend?</h1>
             <div class="d-grid gap-2 col-6 mx-auto">
-                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button">Stand-PC</button></a>
-                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button">Gaming-Laptop</button></a>
-                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button">PS4/PS4-Pro</button></a>
-                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button">PS5</button></a>
-                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button">XBOX One/ X/ S</button></a>
-                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button">Nintendo Switch/ Lite</button></a>
+                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button" id="standpc">Stand-PC</button></a>
+                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button" id="gaminglaptop">Gaming-Laptop</button></a>
+                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button" id="ps4">PS4/PS4-Pro</button></a>
+                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button" id="ps5">PS5</button></a>
+                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button" id="xbox">XBOX One/ X/ S</button></a>
+                <a href="#simple-list-item-3"><button class="btn btn-secondary" type="button" id="nintendo">Nintendo Switch/ Lite</button></a>
                 <br>
                 </div>
                 </div>
@@ -79,8 +79,8 @@
             <h1>Wie viele Stunden spielen Sie pro Woche?</h1>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <div class="input-group mb-1">
-                        <input type="text" class="" placeholder="h" aria-label="h" aria-describedby="button-addon2">
-                        <a href="#simple-list-item-4"><button class="btn btn-outline-secondary" type="button" id="button-addon2">Weiter</button></a>
+                        <input type="text" class="" id="gamingh" placeholder="h" aria-label="h" aria-describedby="gaminghb">
+                        <a href="#simple-list-item-4"><button class="btn btn-outline-secondary" type="submit" value="Absenden" id="gaminghb">Weiter</button></a>
                       </div>
                       <br>
                 </div>
@@ -106,8 +106,8 @@
             <h1>Wie viele Stunden streamen Sie pro Woche?</h1>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <div class="input-group mb-1">
-                        <input type="text" class="" placeholder="h" aria-label="h" aria-describedby="button-addon2">
-                        <a href="#simple-list-item-6"><button class="btn btn-outline-secondary" type="button" id="button-addon2">Weiter</button></a>
+                        <input type="text" class="" id="streamingh" placeholder="h" aria-label="h" aria-describedby="streaminghb">
+                        <a href="#simple-list-item-6"><button class="btn btn-outline-secondary" type="submit" value="Absenden" id="streaminghb">Weiter</button></a>
                       </div>
                       <br>
                 </div>
@@ -134,8 +134,8 @@
             <h1>Wie viele Stunden nutzen Sie diese pro Woche?</h1>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <div class="input-group mb-1">
-                        <input type="text" class="" placeholder="h" aria-label="h" aria-describedby="button-addon2">
-                        <a href="#simple-list-item-8"><button class="btn btn-outline-secondary" type="button" id="button-addon2">Weiter</button></a>
+                        <input type="text" class="" id="socialh" placeholder="h" aria-label="h" aria-describedby="socialhb">
+                        <a href="#simple-list-item-8"><button class="btn btn-outline-secondary" type="submit" value="Absenden" id="socialhb">Weiter</button></a>
                       </div>
                       <br>
                 </div>
@@ -161,8 +161,8 @@
             <div class="bg-light">
             <h1>Lesen Sie diese in digitaler oder gedruckter Form?</h1>
             <div class="d-grid gap-2 col-6 mx-auto">
-                <a href="#simple-list-item-10"><button class="btn btn-secondary" type="button">Digital</button></a>
-                <a href="#simple-list-item-10"><button class="btn btn-secondary" type="button">Gedruckt</button></a>
+                <a href="#simple-list-item-10"><button class="btn btn-secondary" id="zeitungd" type="submit" value="Absenden">Digital</button></a>
+                <a href="#simple-list-item-10"><button class="btn btn-secondary" id="zeitungp" type="submit" value="Absenden">Gedruckt</button></a>
                 <br>
             </div>
                 </div>
@@ -190,38 +190,38 @@
                 <div class="input-group mb-1">
                     <div class="btn-group-sm" role="group" aria-label="Second group">
                     <input type="text" class="" value="Hund/e" readonly placeholder="h" aria-label="h" aria-describedby="button-addon2">
-                        <button type="button" class="btn btn-secondary">1</button>
-                        <button type="button" class="btn btn-secondary">2</button>
-                        <button type="button" class="btn btn-secondary">3</button>
-                        <button type="button" class="btn btn-secondary">4</button>
+                        <button type="button" id="hund1" class="btn btn-secondary">1</button>
+                        <button type="button" id="hund2" class="btn btn-secondary">2</button>
+                        <button type="button" id="hund3" class="btn btn-secondary">3</button>
+                        <button type="button" id="hund4" class="btn btn-secondary">4</button>
                     </div>
                     <div class="btn-group-sm" role="group" aria-label="Second group">
                     <input type="text" class="" value="Katze" readonly placeholder="h" aria-label="h" aria-describedby="button-addon2">
-                        <button type="button" class="btn btn-secondary">1</button>
-                        <button type="button" class="btn btn-secondary">2</button>
-                        <button type="button" class="btn btn-secondary">3</button>
-                        <button type="button" class="btn btn-secondary">4</button>
+                        <button type="button" id="katze1" class="btn btn-secondary">1</button>
+                        <button type="button" id="katze2" class="btn btn-secondary">2</button>
+                        <button type="button" id="katze3" class="btn btn-secondary">3</button>
+                        <button type="button" id="katze4" class="btn btn-secondary">4</button>
                     </div>
                     <div class="btn-group-sm" role="group" aria-label="Second group">
                     <input type="text" class="" value="Kleintier/e" readonly placeholder="h" aria-label="h" aria-describedby="button-addon2">
-                        <button type="button" class="btn btn-secondary">1</button>
-                        <button type="button" class="btn btn-secondary">2</button>
-                        <button type="button" class="btn btn-secondary">3</button>
-                        <button type="button" class="btn btn-secondary">4</button>
+                        <button type="button" id="klein1" class="btn btn-secondary">1</button>
+                        <button type="button" id="klein2" class="btn btn-secondary">2</button>
+                        <button type="button" id="klein3" class="btn btn-secondary">3</button>
+                        <button type="button" id="klein4" class="btn btn-secondary">4</button>
                     </div>
                     <div class="btn-group-sm" role="group" aria-label="Second group">
                     <input type="text" class="" value="Pferd/e" readonly placeholder="h" aria-label="h" aria-describedby="button-addon2">
-                        <button type="button" class="btn btn-secondary">1</button>
-                        <button type="button" class="btn btn-secondary">2</button>
-                        <button type="button" class="btn btn-secondary">3</button>
-                        <button type="button" class="btn btn-secondary">4</button>
+                        <button type="button" id="pferd1" class="btn btn-secondary">1</button>
+                        <button type="button" id="pferd2" class="btn btn-secondary">2</button>
+                        <button type="button" id="pferd3" class="btn btn-secondary">3</button>
+                        <button type="button" id="pferd4" class="btn btn-secondary">4</button>
                     </div>
                     <div class="btn-group-sm" role="group" aria-label="Second group">
                     <input type="text" class="" value="Vogel" readonly placeholder="h" aria-label="h" aria-describedby="button-addon2">
-                        <button type="button" class="btn btn-secondary">1</button>
-                        <button type="button" class="btn btn-secondary">2</button>
-                        <button type="button" class="btn btn-secondary">3</button>
-                        <button type="button" class="btn btn-secondary">4</button>
+                        <button type="button" id="vogel1" class="btn btn-secondary">1</button>
+                        <button type="button" id="vogel2" class="btn btn-secondary">2</button>
+                        <button type="button" id="vogel3" class="btn btn-secondary">3</button>
+                        <button type="button" id="vogel4" class="btn btn-secondary">4</button>
                     </div>
                     <br>
                 </div>

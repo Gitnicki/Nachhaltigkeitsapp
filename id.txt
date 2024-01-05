@@ -1,0 +1,45 @@
+id="standpc">Stand-PC
+id="gaminglaptop">Gaming-Laptop
+id="ps4">PS4/PS4-Pro
+id="ps5">PS5
+id="xbox">XBOX One/ X/ S
+id="nintendo"
+
+input feld h/woche gaming
+id="gamingh"
+
+input feld h/woche streaming
+ id="streamingh" 
+
+input feld h/woche socialmedia
+id="socialh" 
+
+Zeitung Digital/Print
+id="zeitungd"
+id="zeitungp"
+
+haustier id
+id="hund1" 
+id="hund2" 
+id="hund3" 
+id="hund4"
+
+id="katze1"
+id="katze2"
+id="katze3"
+id="katze4"
+
+id="klein1"
+id="klein2"
+id="klein3"
+id="klein4"
+
+id="pferd1"
+id="pferd2"
+id="pferd3"
+id="pferd4"
+
+id="vogel1"
+id="vogel2"
+id="vogel3"
+id="vogel4"
