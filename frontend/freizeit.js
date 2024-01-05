@@ -69,7 +69,22 @@ function calculateCO2perHour(activity, durationInHours) {
   const co2socialMedia = calculateCO2perHour("socialMedia", 1);
   console.log(`CO2-Emissionen beim Nutzen von Social Media für 1 Stunde: ${co2socialMedia} Gramm`);
 
-  
+// Event-Handler für Button, um CO2 pro Stunde zu berechnen
+    document.getElementById('calculateHourBtn').addEventListener('click', function () {
+        // Werte aus den Eingabefeldern abrufen
+        var activity = document.getElementById('activity').value;
+        var duration = parseFloat(document.getElementById('duration').value);
+
+        // Überprüfen, ob die Dauer eine gültige Zahl ist
+        if (!isNaN(duration)) {
+            // JavaScript-Funktion aufrufen und Ergebnis anzeigen
+            var result = calculateCO2perHour(activity, duration);
+            console.log(`CO2-Emissionen für ${activity} in ${duration} Stunden: ${result} Gramm`);
+        } else {
+            console.error('Ungültige Eingabe für Dauer');
+        }
+    });
+
   
 
 
