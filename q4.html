@@ -73,24 +73,16 @@
             <div class="bg-light">
             <h1>Wie setzt sich der Strommix Ihres Anbieters zusammen?</h1>
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <div class="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
-                        <div onclick="window.location = '#simple-list-item-4';">
-                        <input type="submit" value="Absenden" class="btn-check" name="btnradio" id="strommixerneuerbar" autocomplete="off" checked>
-                        <label class="btn btn-outline-secondary" for="btnradio1">100 % Erneuerbare Energie</label>
-                        </div>
-                        <div onclick="window.location = '#simple-list-item-4';">
-                        <input type="submit" value="Absenden" class="btn-check" name="btnradio" id="strommixgas" autocomplete="off">
-                        <label class="btn btn-outline-secondary" for="btnradio2">Überwiegend aus Gaskraftwerken (bis zu 70%)</label>
-                        </div>
-                        <div onclick="window.location = '#simple-list-item-4';">
-                        <input type="submit" value="Absenden" class="btn-check" name="btnradio" id="strommixkohle" autocomplete="off">
-                        <label class="btn btn-outline-secondary" for="btnradio3">Überwiegend aus Kohlekraftwerken (bis zu 70%)</label>
-                        </div>
-                        <div onclick="window.location = '#simple-list-item-4';">
-                        <input type="submit" value="Absenden" class="btn-check" name="btnradio" id="strommixausgeglichen" autocomplete="off">
-                        <label class="btn btn-outline-secondary" for="btnradio4">Ausgeglichen (bis zu 25% jeder Energieerzeugung)</label>
-                        </div>
-                        <br>
+                    <select name="" id="strommix">
+                        <option value="erneuerbar">Erneuerbar</option>
+                        <option value="ausgeglichen">Ausgeglichen</option>
+                        <option value="gas">Gas</option>
+                        <option value="kohle">Kohle</option>
+                    </select>
+                    
+                </div>
+
+            <br>
                 </div>
                 </div>
             </div>
@@ -114,24 +106,12 @@
             <div class="bg-light">
             <h1>Womit heizen Sie?</h1>
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <div class="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
-                        <div onclick="window.location = '#simple-list-item-6';">
-                        <input type="submit" value="Absenden" class="btn-check" name="btnradio" id="heizformheizöl" autocomplete="off" checked>
-                        <label class="btn btn-outline-secondary" for="btnradio5">Heizöl</label>
-                        </div>
-                        <div onclick="window.location = '#simple-list-item-6';">
-                        <input type="submit" value="Absenden" class="btn-check" name="btnradio" id="heizformerdgas" autocomplete="off">
-                        <label class="btn btn-outline-secondary" for="btnradio6">Erdgas</label>
-                        </div>
-                        <div onclick="window.location = '#simple-list-item-6';">
-                        <input type="submit" value="Absenden" class="btn-check" name="btnradio" id="heizformbrennholz" autocomplete="off">
-                        <label class="btn btn-outline-secondary" for="btnradio7">Brennholz</label>
-                        </div>
-                        <div onclick="window.location = '#simple-list-item-6';">
-                        <input type="submit" value="Absenden" class="btn-check" name="btnradio" id="heizformstrom" autocomplete="off">
-                        <label class="btn btn-outline-secondary" for="btnradio8">Strom</label>
-                        </div>
-                        <br>
+                        <select name="" id="heizform">
+                            <option value="heizoel">Heizöl</option>
+                            <option value="erdgas">Erdgas</option>
+                            <option value="brennholz">Brennholz</option>
+                            <option value="strom">Strom</option>
+                        </select>
                 </div>
                 </div>
             </div>
@@ -155,8 +135,8 @@
             </div>
 
         </div>
-        <a href="q5.html">
-        <button type="button" class="btn btn-green"> <img src="images/rechter-pfeil.png" title="Pfeil Icons erstellt von rang - Flaticon" width="100px" height="100px"/></button></a>
+        <!--<a href="q5.html"> -->
+        <button type="submit" id="button-berechnen" class="btn btn-green"> <img src="images/rechter-pfeil.png" title="Pfeil Icons erstellt von rang - Flaticon" width="100px" height="100px"/></button><!--</a>-->
         <br><br><br>
     </div>
 </div>
