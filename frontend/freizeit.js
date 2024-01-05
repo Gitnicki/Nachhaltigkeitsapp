@@ -1,25 +1,93 @@
-window.onload = function () {
-  showPopup();
-}
+// window.onload = function () {
+//   showPopup();
+// }
 
-function showPopup() {
-  document.getElementById('overlay').style.display = 'block';
-  document.getElementById('popup').style.display = 'block';
-}
+// function showPopup() {
+//   document.getElementById('overlay').style.display = 'block';
+//   document.getElementById('popup').style.display = 'block';
+// }
 
-function closePopup() {
-  document.getElementById('overlay').style.display = 'none';
-  document.getElementById('popup').style.display = 'none';
-}
+// function closePopup() {
+//   document.getElementById('overlay').style.display = 'none';
+//   document.getElementById('popup').style.display = 'none';
+// }
 
-// Annahme: Die spezifischen CO2-Emissionswerte können je nach Fahrzeugtyp und Kraftstoff variieren.
-// Hier werden allgemeine Durchschnittswerte verwendet.
+// // Hier werden allgemeine Durchschnittswerte verwendet.
 
-let gaming = "";
+// const container = document.getElementsByClassName('container mt-4');
+// var gaming = "";
 
-document.getElementById('standpc').addEventListener('click', function () {
-  gaming = "standpc";
-})
+// var standPC = document.getElementById('standpc');
+// document.addEventListener('click', function () {
+//   gaming = "standPC";
+// })
+// var Laptop = document.getElementById('gaminglaptop');
+// document.addEventListener('click', function () {
+//   gaming = "Laptop";
+// })
+// var NintendoSwitch = document.getElementById('nintendo');
+// document.addEventListener('click', function () {
+//   gaming = "NintendoSwitch";
+// })
+// var XboxOne = document.getElementById('xbox');
+// document.addEventListener('click', function () {
+//   gaming = "XboxOne";
+// })
+// var PS5 = document.getElementById('ps5');
+// document.addEventListener('click', function () {
+//   gaming = "PS5";
+// })
+// var PS4 = document.getElementById('ps4');
+// document.addEventListener('click', function () {
+//   gaming = "PS4";
+// })
+// var streaming = "";
+// document.getElementById('streamingh').addEventListener('click', function () {
+//   streaming = "streamingh";
+// });
+
+// // Funktion zur Berechnung der CO2-Emissionen für die Auto-Nutzung
+// function co2berechnungperHour(gaming, gamingh, streamingh, socialh) {
+//   let co2EmissionenProStunde; // CO2-Emissionen pro Stunde
+//   let co2Emissionen; // Gesamte CO2-Emissionen pro Woche
+//   if (gaming === 'standpc') {
+//       if (gaming === 'standpc') {
+//           co2EmissionenProStunde = 210; 
+//       } else if (gaming === 'gaminglaptop') {
+//           co2EmissionenProStunde = 101; 
+//       } else if (gaming === 'nintendo') {
+//           co2EmissionenProStunde = 5;  
+//       } else if (gaming === 'ps5') {
+//           co2EmissionenProStunde = 90;  
+//       } else if (gaming === 'ps4') {
+//           co2EmissionenProStunde = 69; 
+//       } else if (gaming === 'xbox') {
+//           co2EmissionenProStunde = 63; 
+//       }
+
+//       // Berechnung der Gesamten CO2-Emissionen pro Woche
+//       co2Emissionen = gamingh * co2EmissionenProStunde;
+
+//   } else if (streaming === 'streaming') {
+//     co2EmissionenProStunde = 130;
+//       co2Emissionen = streamingh * co2EmissionenProStunde;
+//   } else if (socialmedia === 'socialmedia') {
+//     co2EmissionenProStunde = 138;
+//       co2Emissionen = socialh * co2EmissionenProStunde;
+//   }
+//   return co2Emissionen.toFixed(2); // Brgrenze die Anzahl der Dezimalstellen
+// }
+document.addEventListener('DOMContentLoaded', (event) => {
+  const gamingHoursbutton = document.getElementById('gaminghb');
+  gamingHoursbutton.addEventListener('click', () => {
+  const gamingHours = document.getElementById('gamingh').value;
+  console.log(gamingHours);
+  });
+  });
+// function savegaminghours() {
+//   const gamingHours = document.getElementById('gamingh').innerHTML;
+//   console.log('gaminghours, ', gamingHours);
+// };
 
 function calculateCO2perHour(activity, durationInHours) {
     // CO2-Emissionen in Gramm pro Stunde für verschiedene Aktivitäten
@@ -69,7 +137,8 @@ function calculateCO2perHour(activity, durationInHours) {
   };  
   
   // Beispielaufruf
-  const co2standPC = calculateCO2perHour("standPC", 5);
+  const gamingh = document.getElementById("gamingh");
+  const co2standPC = calculateCO2perHour("standPC", gamingh);
   console.log(`CO2-Emissionen beim Zocken am StandPC für 2 Stunden: ${co2standPC} Gramm`);
   
   const co2Laptop = calculateCO2perHour("Laptop", 2);
