@@ -46,19 +46,23 @@ var kraftstoff ="";
 
 document.getElementById('benzin').addEventListener('click', function () {
     kraftstoff = "benzin";
-    console.log(kraftstoff)
-})
+    console.log(kraftstoff);
+});
 document.getElementById('diesel').addEventListener('click', function () {
     kraftstoff = "diesel";
-})
-document.getElementById('hybrid').addEventListener('click', function () {
-    kraftstoff = "hybrid";
+    console.log(kraftstoff);
+});
+document.getElementById('hybrid-benzin').addEventListener('click', function () {
+    kraftstoff = "hybrid-benzin";
+    console.log(kraftstoff);
 });
 document.getElementById('elektro').addEventListener('click', function () {
     kraftstoff = "elektro";
+    console.log(kraftstoff);
 });
 document.getElementById('gas').addEventListener('click', function () {
     kraftstoff = "gas";
+    console.log(kraftstoff);
 });
 var verbrauchPro100km=0;
 document.getElementById('button-addon2').addEventListener('click', function () {
@@ -89,14 +93,19 @@ function co2berechnung(verkehrsmittel, kraftstoff, verbrauchPro100km, jahreskilo
             co2EmissionenProLiter = 2390; // Menge für Benzin in g CO2 pro Liter
         } else if (kraftstoff === 'diesel') {
             co2EmissionenProLiter = 2640; // Menge für Diesel in g CO2 pro Liter
-        } else if (kraftstoff === 'hybrid') {
-            co2EmissionenProLiter = 1111; // 
+        } else if (kraftstoff === 'hybrid-benzin') {
+            co2EmissionenProLiter = 1770; // 
+        } else if (kraftstoff === 'hybrid-diesel') {
+            co2EmissionenProLiter = 1980; // 
+        } else if (kraftstoff === 'hybrid-gas') {
+            co2EmissionenProLiter = 1245; // 
         } else if (kraftstoff === 'elektro') {
-            co2EmissionenProLiter = 1111; // 
+            co2EmissionenProLiter = 563; // Menge für KW/H in g CO2 pro KW
         } else if (kraftstoff === 'LPG') {
             co2EmissionenProLiter = 1660; // Menge für LPG in g CO2 pro Liter
-        } else if (kraftstoff === 'CNG') {
-            co2EmissionenProLiter = 2666; // Menge für CNG in g CO2 pro Liter
+        
+        // } else if (kraftstoff === 'CNG') {
+        //     co2EmissionenProLiter = 2666; // Menge für CNG in g CO2 pro Liter
         }
         // Berechnung des Verbrauchs in Litern pro Jahr
         verbrauchInLiter = (verbrauchPro100km / 100) * jahreskilometer;
@@ -109,13 +118,14 @@ function co2berechnung(verkehrsmittel, kraftstoff, verbrauchPro100km, jahreskilo
         co2Emissionen = personenkilometer * 36
     }
     return co2Emissionen;
-}
+};
 
 //Anruf der Funktion
 document.getElementById('button-berechnen').addEventListener('click', function () {
 const autoCO2Emissionen = co2berechnung(verkehrsmittel , kraftstoff,verbrauchPro100km, jahreskilometer, personenkilometer);
 console.log('Geschätzte CO2-Emissionen für die Auto-Nutzung:', autoCO2Emissionen);
 });
-//Beispielaufruf der Funktion
+
+// Beispielaufruf der Funktion
 // const autoCO2Emissionen = co2berechnung('Auto', 'Benzin', 7.5, 15000, null);
 // console.log('Geschätzte CO2-Emissionen für die Auto-Nutzung:', autoCO2Emissionen, 'g CO2 pro Jahr');
