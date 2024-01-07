@@ -1,10 +1,9 @@
-// Funktion zur Berechnung der CO2-Emissionen für die Auto-Nutzung
+// Funktion zur Berechnung der CO2-Emissionen für die Freizeit-Nutzung
 function co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisstreaming, streamingHours, dropdownissocialmedia, socialHours, dropdowniszeitung, dropdowniszeitungdp) {
   let co2EmissionenProStunde; // CO2-Emissionen pro Stunde
   let co2EmissionenProNutzung; // CO2-Emissionen pro Nutzung der Zeitung
   let co2Emissionen = 0; // Gesamte CO2-Emissionen pro Woche
     if (dropdownvalue === "Ja") {
-      console.log("test");
       if (platform === 'standpc') {
           co2EmissionenProStunde = 210; 
       } else if (platform === 'gaminglaptop') {
@@ -97,8 +96,8 @@ document.getElementById('button-berechnen').addEventListener('click', function (
   const dropdownissocialmedia = document.getElementById('dropdownissocialmedia').value;
   const socialHours = parseInt(document.getElementById('socialh').value);
   const dropdowniszeitung = document.getElementById('dropdowniszeitung').value;
-  const dropdowniszeitungdp = parseInt(document.getElementById('dropdowniszeitungdp').value);
-
+  const dropdowniszeitungdp = document.getElementById('dropdowniszeitungdp').value;
+  const dropdownistiere = document.getElementById('dropdownistiere').value;
   const co2berechnung = co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisstreaming, streamingHours, dropdownissocialmedia, socialHours, dropdowniszeitung, dropdowniszeitungdp);
   console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnung);
   });
