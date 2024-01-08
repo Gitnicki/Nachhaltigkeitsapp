@@ -12,6 +12,12 @@ const express = require('express');
 // Express initialisieren
 const app = express();
 
+// session express importieren
+const session = require('express-session');
+
+// Path importieren
+const path = require('path');
+
 // Port definieren (optional)
 const port = 3000;
 
@@ -72,7 +78,7 @@ function getConnection() {
     // run sample query to check DB setup
     // try to execute code that might fail
     try {
-        cnx.query('SELECT * FROM abdruck;', function (error, results, fields) {
+        cnx.query('SELECT * FROM USERS;', function (error, results, fields) {
             if (error) {
                 console.log("mySQL Error:", error);
                 process.exit(1); // exit
@@ -89,16 +95,34 @@ function getConnection() {
     return cnx;
 }
 const cnx = getConnection(); 
-// http://localhost:3000/
-app.get('/', function(req, res) {
+// http://localhost:3000/login
+app.get('/login', function(req, res) {
 	// Render login template
-	res.sendFile(path.join(__dirname + '/login.html'));
+	res.sendFile(path.join(__dirname + '../../../login.html'));
 });
+
+// http://localhost:3000/register
+app.get('/register', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../register.html'));
+});
+
+
+// Express Session konfigurieren
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.static(path.join(__dirname, 'static')));
+
 //sign up route
 app.post('/register', (req, res) => {
     const { benutzername, passwort, email } = req.body;
     console.log("req:", req.body);
-        if (benutzername && passwort && email){
+    try{    
+    if (benutzername && passwort && email){
             cnx.query('SELECT * FROM users WHERE benutzername = ? OR email = ?', [benutzername, email], function (error, results, fields) {
                 if (error) {
                     console.error("Fehler bei der Überprüfung des vorhandenen Benutzers : ", error);
@@ -119,13 +143,13 @@ app.post('/register', (req, res) => {
                 }
             });
         } else {
-            return res.status(400).send('Veuillez fournir des informations valides pour l\'inscription');
+            return res.status(400).send('Bitte gib die richtige Informationen ein');
         }
     } catch (error) {
-        console.error("Une erreur s'est produite : ", error);
-        return res.status(500).send('Erreur interne du serveur');
+        console.error("Ein Fehler ist aufgetreten : ", error);
+        return res.status(500).send('Ein Fehler beim Server');
     }
-});
+    });
 
 
 //login route
@@ -155,6 +179,19 @@ app.post('/login', (req, res) => {
         res.end();
     }
     
+});
+
+// http://localhost:3000/home
+app.get('/home', function(req, res) {
+	// If the user is loggedin
+	if (req.session.loggedin) {
+		// Output username
+		res.send('Welcome back, ' + req.session.username + '!');
+	} else {
+		// Not logged in
+		res.send('Please login to view this page!');
+	}
+	res.end();
 });
 
 // localhost listen port app 
