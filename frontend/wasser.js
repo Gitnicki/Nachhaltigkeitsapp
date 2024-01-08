@@ -1,3 +1,41 @@
+document.addEventListener('DOMContentLoaded', function () {
+  const sliderwaschmaschine = document.getElementById('sliderwaschmaschine');
+  const slidergeschirrspueler = document.getElementById('slidergeschirrspueler');
+  const sliderduschen = document.getElementById('sliderduschen');
+  const sliderbaden = document.getElementById('sliderbaden');
+  const sliderreinigen = document.getElementById('sliderreinigen');
+  const slidergarten = document.getElementById('slidergarten');
+  const sliderkochen = document.getElementById('sliderkochen');
+  const sliderValuewaschmaschine = document.getElementById('sliderValuewaschmaschine');
+  const sliderValuegeschirrspueler = document.getElementById('sliderValuegeschirrspueler');
+  const sliderValueduschen = document.getElementById('sliderValueduschen');
+  const sliderValuebaden = document.getElementById('sliderValuebaden');
+  const sliderValuereinigen = document.getElementById('sliderValuereinigen');
+  const sliderValuegarten = document.getElementById('sliderValuegarten');
+  const sliderValuekochen = document.getElementById('sliderValuekochen');
+
+  // Funktion zur Aktualisierung des Slider-Werts
+  function updateSliderValue() {
+    sliderValuewaschmaschine.textContent = sliderwaschmaschine.value;
+    sliderValuegeschirrspueler.textContent = slidergeschirrspueler.value;
+    sliderValueduschen.textContent = sliderduschen.value;
+    sliderValuebaden.textContent = sliderbaden.value;
+    sliderValuereinigen.textContent = sliderreinigen.value;
+    sliderValuegarten.textContent = slidergarten.value;
+    sliderValuekochen.textContent = sliderkochen.value;
+  }
+
+  // Event-Listener für den Slider
+  sliderwaschmaschine.addEventListener('input', updateSliderValue);
+  slidergeschirrspueler.addEventListener('input', updateSliderValue);
+  sliderduschen.addEventListener('input', updateSliderValue);
+  sliderbaden.addEventListener('input', updateSliderValue);
+  sliderreinigen.addEventListener('input', updateSliderValue);
+  slidergarten.addEventListener('input', updateSliderValue);
+  sliderkochen.addEventListener('input', updateSliderValue);
+});
+
+
 function calculateLitreperUse(activity, durationInUses) {
     // CO2-Emissionen in Gramm pro Stunde für verschiedene Aktivitäten
     const litrePerUse = {
