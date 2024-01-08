@@ -51,8 +51,6 @@
 
 // Anruf der Funktion
 document.getElementById('button-berechnen').addEventListener('click', function () {
-  // const platform = document.getElementById('platform').value;
-  // const gamingHours = parseInt(document.getElementById('gamingh').value);
   const anzahlpersonen = parseInt(document.getElementById('anzahlp').value);
   const anzahlstromkwh = parseInt(document.getElementById('anzahlstromkwh').value);
   const strommix = document.getElementById('strommix').value;
@@ -60,5 +58,5 @@ document.getElementById('button-berechnen').addEventListener('click', function (
   const heizkwh = parseInt(document.getElementById('heizkwh').value);
 
   const co2berechnung = co2berechnungwohnen(anzahlpersonen, anzahlstromkwh, strommix, heizform, heizkwh);
-  console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnung);
+  console.log('Geschätzte CO2-Emissionen für die Wohn-Nutzung:', co2berechnung);
 });
