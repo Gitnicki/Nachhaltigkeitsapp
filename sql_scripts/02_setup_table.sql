@@ -7,13 +7,13 @@ CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS abdruck (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    kraftstoffausstoß INT,
-    freizeitverbrauch INT,  
-    wasserverbrauch INT,
-    stromverbrauch INT,
-    haushaltverbrauch INT,
-    FOREIGN KEY (user_id) REFERENCES users(id) 
-);
+-- CREATE TABLE IF NOT EXISTS abdruck (
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     user_id INT,
+--     kraftstoffausstoß INT,
+--     freizeitverbrauch INT,  
+--     wasserverbrauch INT,
+--     stromverbrauch INT,
+--     haushaltverbrauch INT,
+--     FOREIGN KEY (user_id) REFERENCES users(id) 
+-- );
