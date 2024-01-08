@@ -4,161 +4,86 @@ function co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisst
   let co2EmissionenProNutzung; // CO2-Emissionen pro Nutzung der Zeitung
   let co2EmissionenProTier; // Co2-Emissionen pro Tier auf ein Jahr
   let co2Emissionen = 0; // Gesamte CO2-Emissionen pro Woche
-    if (dropdownvalue === "Ja") {
-      if (platform === 'standpc') {
-          co2EmissionenProStunde = 210; 
-      } else if (platform === 'gaminglaptop') {
-          co2EmissionenProStunde = 101; 
-      } else if (platform === 'nintendo') {
-          co2EmissionenProStunde = 5;  
-      } else if (platform === 'ps5') {
-          co2EmissionenProStunde = 90;  
-      } else if (platform === 'ps4') {
-          co2EmissionenProStunde = 69; 
-      } else if (platform === 'xbox') {
-          co2EmissionenProStunde = 63; 
-      }
-      console.log(gamingHours);
-      console.log(co2EmissionenProStunde);
-      // Berechnung der Gesamten CO2-Emissionen pro Woche
-      co2Emissionen = gamingHours * co2EmissionenProStunde;
-      if (dropdownisstreaming === "Ja") {
-        console.log(streamingHours);
-        co2Emissionen += 130 * streamingHours;
-      }
-      if (dropdownissocialmedia === "Ja") {
-        console.log(socialHours);
-        co2Emissionen += 138 * socialHours;
-      }
-      if (dropdowniszeitung === "Ja") {
-        if (dropdowniszeitungdp === 'Digital') {
-          co2EmissionenProNutzung = 150; 
-      } else if (dropdowniszeitungdp === 'Print') {
-          co2EmissionenProNutzung = 250; 
-      }
-      co2Emissionen += co2EmissionenProNutzung * 7;
+
+  if (dropdownvalue === "Ja") {
+    switch (platform) {
+      case 'standpc':
+        co2EmissionenProStunde = 210;
+        break;
+      case 'gaminglaptop':
+        co2EmissionenProStunde = 101;
+        break;
+      case 'nintendo':
+        co2EmissionenProStunde = 5;
+        break;
+      case 'ps5':
+        co2EmissionenProStunde = 90;
+        break;
+      case 'ps4':
+        co2EmissionenProStunde = 69;
+        break;
+      case 'xbox':
+        co2EmissionenProStunde = 63;
+        break;
+      default:
+        co2EmissionenProStunde = 0;
     }
-      if (dropdownistiere === "Ja") {
-        if (dropdownwelchestier === 'Hund') {
-          co2EmissionenProTier = 725000; // Co2Emissionen in Gramm auf ein Jahr
-      } else if (dropdownwelchestier === 'Katze') {
-          co2EmissionenProTier = 400000; 
-      } else if (dropdownwelchestier === 'Kleintier') {
-          co2EmissionenProTier = 100000;  
-      } else if (dropdownwelchestier === 'Pferd') {
-          co2EmissionenProTier = 3100000;  
-      } else if (dropdownwelchestier === 'Vogel') {
-          co2EmissionenProTier = 25000; 
-      } 
-      co2Emissionen += co2EmissionenProTier * dropdownanzahltiere;
-    
-    }
-  }   
+
+    console.log(gamingHours);
+    console.log(co2EmissionenProStunde);
+
+    // Berechnung der Gesamten CO2-Emissionen pro Woche
+    co2Emissionen = gamingHours * co2EmissionenProStunde;
+
     if (dropdownisstreaming === "Ja") {
       console.log(streamingHours);
+      console.log(130);
       co2Emissionen += 130 * streamingHours;
-
-      if (dropdownissocialmedia === "Ja") {
-        console.log(socialHours);
-        co2Emissionen += 138 * socialHours;
-      }
-      if (dropdowniszeitung === "Ja") {
-        if (dropdowniszeitungdp === 'Digital') {
-          co2EmissionenProNutzung = 150; 
-      } else if (dropdowniszeitungdp === 'Print') {
-          co2EmissionenProNutzung = 250; 
-      }
-      co2Emissionen += co2EmissionenProNutzung * 7;
     }
-    if (dropdownistiere === "Ja") {
-      if (dropdownwelchestier === 'Hund') {
-        co2EmissionenProTier = 725000; // Co2Emissionen in Gramm auf ein Jahr
-    } else if (dropdownwelchestier === 'Katze') {
-        co2EmissionenProTier = 400000; 
-    } else if (dropdownwelchestier === 'Kleintier') {
-        co2EmissionenProTier = 100000;  
-    } else if (dropdownwelchestier === 'Pferd') {
-        co2EmissionenProTier = 3100000;  
-    } else if (dropdownwelchestier === 'Vogel') {
-        co2EmissionenProTier = 25000; 
-    } 
-    co2Emissionen += co2EmissionenProTier * dropdownanzahltiere;
-  }
-    }
-
+    
     if (dropdownissocialmedia === "Ja") {
       console.log(socialHours);
+      console.log(138);
       co2Emissionen += 138 * socialHours;
-
-      if (dropdowniszeitung === "Ja") {
-        if (dropdowniszeitungdp === 'Digital') {
-          co2EmissionenProNutzung = 150; 
-      } else if (dropdowniszeitungdp === 'Print') {
-          co2EmissionenProNutzung = 250; 
-      }
-      co2Emissionen += co2EmissionenProNutzung * 7;
-    }
-    if (dropdownistiere === "Ja") {
-      if (dropdownwelchestier === 'Hund') {
-        co2EmissionenProTier = 725000; // Co2Emissionen in Gramm auf ein Jahr
-    } else if (dropdownwelchestier === 'Katze') {
-        co2EmissionenProTier = 400000; 
-    } else if (dropdownwelchestier === 'Kleintier') {
-        co2EmissionenProTier = 100000;  
-    } else if (dropdownwelchestier === 'Pferd') {
-        co2EmissionenProTier = 3100000;  
-    } else if (dropdownwelchestier === 'Vogel') {
-        co2EmissionenProTier = 25000; 
-    } 
-    co2Emissionen += co2EmissionenProTier * dropdownanzahltiere;
-  }
     }
 
     if (dropdowniszeitung === "Ja") {
-      if (dropdowniszeitungdp === 'Digital') {
-        co2EmissionenProNutzung = 150; 
-    } else if (dropdowniszeitungdp === 'Print') {
-        co2EmissionenProNutzung = 250; 
+      co2EmissionenProNutzung = (dropdowniszeitungdp === 'Digital') ? 150 : 250;
+      console.log(co2EmissionenProNutzung);
+      co2Emissionen += co2EmissionenProNutzung * 7;
     }
-    co2Emissionen += co2EmissionenProNutzung * 7;
 
     if (dropdownistiere === "Ja") {
-      if (dropdownwelchestier === 'Hund') {
-        co2EmissionenProTier = 725000; // Co2Emissionen in Gramm auf ein Jahr
-    } else if (dropdownwelchestier === 'Katze') {
-        co2EmissionenProTier = 400000; 
-    } else if (dropdownwelchestier === 'Kleintier') {
-        co2EmissionenProTier = 100000;  
-    } else if (dropdownwelchestier === 'Pferd') {
-        co2EmissionenProTier = 3100000;  
-    } else if (dropdownwelchestier === 'Vogel') {
-        co2EmissionenProTier = 25000; 
-    } 
-    co2Emissionen += co2EmissionenProTier * dropdownanzahltiere;
+      switch (dropdownwelchestier) {
+        case 'Hund':
+          co2EmissionenProTier = 725000;
+          break;
+        case 'Katze':
+          co2EmissionenProTier = 400000;
+          break;
+        case 'Kleintier':
+          co2EmissionenProTier = 100000;
+          break;
+        case 'Pferd':
+          co2EmissionenProTier = 3100000;
+          break;
+        case 'Vogel':
+          co2EmissionenProTier = 25000;
+          break;
+        default:
+          co2EmissionenProTier = 0;
+      }
+      console.log(co2EmissionenProTier);
+      console.log(dropdownanzahltiere);
+      co2Emissionen += co2EmissionenProTier * dropdownanzahltiere;
+    }
   }
-  }
-  if (dropdownistiere === "Ja") {
-    if (dropdownwelchestier === 'Hund') {
-      co2EmissionenProTier = 725000; // Co2Emissionen in Gramm auf ein Jahr
-  } else if (dropdownwelchestier === 'Katze') {
-      co2EmissionenProTier = 400000; 
-  } else if (dropdownwelchestier === 'Kleintier') {
-      co2EmissionenProTier = 100000;  
-  } else if (dropdownwelchestier === 'Pferd') {
-      co2EmissionenProTier = 3100000;  
-  } else if (dropdownwelchestier === 'Vogel') {
-      co2EmissionenProTier = 25000; 
-  } 
-  co2Emissionen += co2EmissionenProTier * dropdownanzahltiere;
-}
 
-      
   console.log(co2Emissionen);
-  return co2Emissionen; // Brgrenze die Anzahl der Dezimalstellen
+  return co2Emissionen;
 }
 
-
-//Anruf der Funktion
+// Anruf der Funktion
 document.getElementById('button-berechnen').addEventListener('click', function () {
   const dropdownvalue = document.getElementById('dropdownisgaming').value;
   const platform = document.getElementById('platform').value;
@@ -171,13 +96,8 @@ document.getElementById('button-berechnen').addEventListener('click', function (
   const dropdowniszeitungdp = document.getElementById('dropdowniszeitungdp').value;
   const dropdownistiere = document.getElementById('dropdownistiere').value;
   const dropdownwelchestier = document.getElementById('dropdownwelchestier').value;
-  const dropdownanzahltiere = document.getElementById('dropdownanzahltiere').value;
-  
+  const dropdownanzahltiere = parseInt(document.getElementById('dropdownanzahltiere').value);
+
   const co2berechnung = co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisstreaming, streamingHours, dropdownissocialmedia, socialHours, dropdowniszeitung, dropdowniszeitungdp, dropdownistiere, dropdownwelchestier, dropdownanzahltiere);
   console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnung);
-  });
-
-
-
-
-
+});
