@@ -13,51 +13,30 @@
 <body>
     <nav class="navbar bg-body-tertiary ecoleaf">
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">
+            <a class="navbar-brand" href="index.html">
                 <img src="images/icon.jpg" alt="Icon" width="70" height="55" class="d-inline-block align-text-top">
                 EcoLeaf
             </a>
             <form class="container-fluid justify-content-start">
-                <button class="btn btn-outline-success me-2" type="button">Main button</button>
-                <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
+                
+                <a href="login.html"><button class="btn btn-outline-success me-2" type="button">Anmelden</button></a>
+                <a href="register.html"><button class="btn btn-sm btn-outline-secondary" type="button">Registrieren</button></a>
             </form>
         </div>
     </nav>
-
-
 <div class="popup"> 
     <div id="overlay"></div>
     <div id="popup">
         <P>Willkommen bei EcoLeaf deine nachhaltige Lösung für eine grünere Zukunft! Entdecke, handle und verändere die Welt mit nur einem Klick.</P>
         <button onclick="closePopup()">Schließen</button>
     </div>
-    <div class="wrapper">
-        <form action="">
-        <h1>Login</h1>
-        <div class="input-box">
-            <input type="text" placeholder="Username" required>
-            <i class='bx bxs-user'></i>
-        </div>
-        <div class="input-box">
-            <input type="password" placeholder="Password" required>
-            <i class='bx bxs-lock-alt' ></i>
-        </div>
-        <div class="remember-forgot">
-            <label><input type="checkbox">Remember Me</label>
-            <a href="#">Forgot Password</a>
-        </div>
-        <button type="submit" class="btn">Login</button>
-        <div class="register-link">
-            <p>Dont have an account? <a href="#">Register</a></p>
-        </div>
-        </form>
-    </div>
-    <script src="backend/app.js"></script>
-</div>    
+</div>
+
+
 <footer class="navbar navbar-expand-lg bg-secondary footer" style="height: 180px;" data-bs-theme="dark">
     <div class="container-fluid">
         <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
-            <li class="nav-item px-2"><a href="index.html" target="_self" class="nav-link">Home</a>
+            <li class="nav-item px-2"><a href="home.html" target="_self" class="nav-link">Home</a>
             <li class="nav-item px-2"><a href="datenschutz.html" target="_self" class="nav-link">Datenschutz</a></li>
             <li class="nav-item px-2"><a href="contact.html" target="_self" class="nav-link">Kontakt</a></li>
             <li class="nav-item px-2"><a href="impressum.html" target="_self" class="nav-link">Impressum</a></li>
@@ -70,5 +49,4 @@
     crossorigin="anonymous"></script>
     
 </body>
-
 </html>
