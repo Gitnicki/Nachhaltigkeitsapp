@@ -65,3 +65,32 @@ document.getElementById('button-berechnen').addEventListener('click', function (
     const co2berechnung = co2berechnungverkehr(fahrzeugnutzung, kraftstoff, verbrauch, kmprojahr, dropdownifbusbahn, kmjahroeffis);
     console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnung);
   });
+
+
+// Um mit Weder Noch andere Optionen auszublenden, allerdings nur die derselben Frage, nicht aller
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const select = document.getElementById('fahrzeugnutzung');
+  
+//     // Event-Listener für das Ändern der Auswahl
+//     select.addEventListener('change', function () {
+//       const selectedValue = select.value;
+  
+//       // Überprüfen, ob "weder noch" ausgewählt wurde
+//       if (selectedValue === 'none') {
+//         // Deaktiviere alle anderen Optionen
+//         const options = select.options;
+//         for (let i = 0; i < options.length; i++) {
+//           if (options[i].value !== 'none') {
+//             options[i].disabled = true;
+//           }
+//         }
+//       } else {
+//         // Aktiviere alle Optionen
+//         const options = select.options;
+//         for (let i = 0; i < options.length; i++) {
+//           options[i].disabled = false;
+//         }
+//       }
+//     });
+//   });
