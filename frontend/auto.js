@@ -1,0 +1,67 @@
+//Berechnungsfunktion
+function co2berechnungverkehr(fahrzeugnutzung, kraftstoff, verbrauch, kmprojahr, dropdownifbusbahn, kmjahroeffis) {
+    let co2EmissionenProLiter = 0;
+    let verbrauchinLiter = 0;
+    let co2Emissionen = 0;
+
+    if (fahrzeugnutzung === "pkw") {
+        switch (kraftstoff) {
+            case 'benzin':
+                co2EmissionenProLiter = 2390; // Menge für Benzin in g CO2 pro Liter
+                break;
+            case 'diesel':
+                co2EmissionenProLiter = 2640; // Menge für Diesel in g CO2 pro Liter
+                break;
+            case 'hybridbenzin':
+                co2EmissionenProLiter = 1770; // Menge für Hybridbenzin in g CO2 pro Liter
+                break;
+            case 'hybriddiesel':
+                co2EmissionenProLiter = 1980; // Menge für Hybriddiesel in g CO2 pro Liter
+                break;
+            case 'hybridgas':
+                co2EmissionenProLiter = 1245; // Menge für Hybridgas in g CO2 pro Liter
+                break;
+            case 'elektro':
+                co2EmissionenProLiter = 563; // Menge für KW/H in g CO2 pro KW
+                break;
+            case 'gaslpg':
+                co2EmissionenProLiter = 1660; // Menge für LPG in g CO2 pro Liter
+                break;
+            case 'gascng':
+                co2EmissionenProLiter = 2666; // Menge für CNG in g CO2 pro Liter
+                break;
+            default:
+                co2EmissionenProLiter = 0;
+        }
+        console.log(co2EmissionenProLiter);
+        // Berechnung des Verbrauchs auf einen Liter
+        verbrauchinLiter = (verbrauch / 100) * kmprojahr ;
+        console.log(verbrauchinLiter);
+        // Berechnung der Gesamten CO2-Emissionen pro Jahr
+        co2Emissionen = verbrauchinLiter * co2EmissionenProLiter;
+    }
+    
+    if (fahrzeugnutzung === "oeffis") {
+        switch (dropdownifbusbahn) {
+            case "bus":
+                co2Emissionen += kmjahroeffis * 23;
+            case "bahn":
+                co2Emissionen += kmjahroeffis * 36;
+        }
+    }
+
+    return co2Emissionen;
+};
+
+// Anruf der Funktion
+document.getElementById('button-berechnen').addEventListener('click', function () {
+    const fahrzeugnutzung = document.getElementById('fahrzeugnutzung').value;
+    const kraftstoff = document.getElementById('kraftstoff').value;
+    const verbrauch = parseInt(document.getElementById('verbrauch').value);
+    const kmprojahr = parseInt(document.getElementById('kmjahr').value);
+    const dropdownifbusbahn = document.getElementById('dropdownifbusbahn').value;
+    const kmjahroeffis = parseInt(document.getElementById('kmjahroeffis').value);
+
+    const co2berechnung = co2berechnungverkehr(fahrzeugnutzung, kraftstoff, verbrauch, kmprojahr, dropdownifbusbahn, kmjahroeffis);
+    console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnung);
+  });
