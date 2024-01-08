@@ -51,12 +51,6 @@ body {
 }
 
 
-#header {
-    background-image: url(images/background.jpg);
-    text-align: center;
-    font-size: xx-large;
-}
-
 #contact
     {
         box-sizing: border-box;
@@ -227,4 +221,14 @@ overlay {
 }
 .register-link p a:hover{
   text-decoration: underline;
+}
+
+.slider-container {
+  text-align: center;
+  width: 200px;
+}
+
+#sliderValue {
+  display: inline-block;
+  margin-left: 10px;
 }
