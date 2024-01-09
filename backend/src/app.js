@@ -4,12 +4,12 @@
 // var data = { name: "John", age: 30 };
 // var rendered = Mustache.render(template, data);
 
-var mime = require('mime-types')
+// var mime = require('mime-types')
 
 // Importieren Sie die routing.js-Datei
 // const routing = require ("./routing.js");
 
-console.log("gefunden")
+// console.log("gefunden")
 // Fügen Sie hier Ihren eigenen Code für die app.js hinzu, falls erforderlich
 console.log("app.js wurde aufgerufen");
 
@@ -116,6 +116,7 @@ function getConnection() {
     return cnx;
 }
 const cnx = getConnection(); 
+
 // http://localhost:3000/login
 app.get('/login', function(req, res) {
 	// Render login template
@@ -128,6 +129,60 @@ app.get('/register', function(req, res) {
 	res.sendFile(path.join(__dirname + '../../../register.html'));
 });
 
+// http://localhost:3000/home
+app.get('/home', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../home.html'));
+});
+
+// http://localhost:3000/index
+app.get('/index', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../index.html'));
+});
+
+// http://localhost:3000/impressum
+app.get('/impressum', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../impressum.html'));
+});
+
+// http://localhost:3000/contact
+app.get('/contact', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../contact.html'));
+});
+
+// http://localhost:3000/datenschutz
+app.get('/datenschutz', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../datenschutz.html'));
+});
+// http://localhost:3000/q1
+app.get('/q1', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../q1.html'));
+});
+// http://localhost:3000/q2
+app.get('/q2', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../q2.html'));
+});
+// http://localhost:3000/q3
+app.get('/q3', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../q3.html'));
+});
+// http://localhost:3000/q4
+app.get('/q4', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../q4.html'));
+});
+// http://localhost:3000/q5
+app.get('/q5', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../q5.html'));
+});
 
 // Express Session konfigurieren
 app.use(session({

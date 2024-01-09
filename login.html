@@ -35,7 +35,7 @@
         </div>
         <button onclick="redirectToHome()" type="submit" class="btn">Anmelden</button>
         <div class="register-link">
-            <p>noch kein Konto? <a href="register.html">Registrieren</a></p>
+            <p>noch kein Konto? <a href="register">Registrieren</a></p>
         </div>
         </form>
     </div> 
@@ -56,4 +56,19 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
     <script src="/static/login.js"></script> 
+    <script>
+        // JavaScript, um die GET-Anfrage auszulösen
+        document.getElementById('redirectToHome').addEventListener('click', function() {
+            // Erstellen Sie eine GET-Anfrage zum Server für /home
+            fetch('/home')
+                .then(response => response.text())
+                .then(html => {
+                    // Ersetzen Sie den Inhalt des aktuellen Dokuments mit dem geladenen HTML
+                    document.open();
+                    document.write(html);
+                    document.close();
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
 </html>
