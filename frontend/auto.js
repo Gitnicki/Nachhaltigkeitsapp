@@ -2,7 +2,7 @@
 function co2berechnungverkehr(fahrzeugnutzung, kraftstoff, verbrauch, kmprojahr, dropdownifbusbahn, kmjahroeffis) {
     let co2EmissionenProLiter = 0;
     let verbrauchinLiter = 0;
-    let co2Emissionen = 0;
+    let co2Emissionenauto = 0;
 
     if (fahrzeugnutzung === "pkw") {
         switch (kraftstoff) {
@@ -38,19 +38,19 @@ function co2berechnungverkehr(fahrzeugnutzung, kraftstoff, verbrauch, kmprojahr,
         verbrauchinLiter = (verbrauch / 100) * kmprojahr ;
         console.log(verbrauchinLiter);
         // Berechnung der Gesamten CO2-Emissionen pro Jahr
-        co2Emissionen = verbrauchinLiter * co2EmissionenProLiter;
+        co2Emissionenauto = verbrauchinLiter * co2EmissionenProLiter;
     }
     
     if (fahrzeugnutzung === "oeffis") {
         switch (dropdownifbusbahn) {
             case "bus":
-                co2Emissionen += kmjahroeffis * 23;
+                co2Emissionenauto += kmjahroeffis * 23;
             case "bahn":
-                co2Emissionen += kmjahroeffis * 36;
+                co2Emissionenauto += kmjahroeffis * 36;
         }
     }
 
-    return co2Emissionen;
+    return co2Emissionenauto;
 };
 
 // Anruf der Funktion
