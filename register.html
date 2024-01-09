@@ -63,4 +63,19 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    <script>
+        // JavaScript, um die GET-Anfrage auszulösen
+        document.getElementById('redirectToLogin').addEventListener('click', function() {
+            // Erstellen Sie eine GET-Anfrage zum Server für /home
+            fetch('/login')
+                .then(response => response.text())
+                .then(html => {
+                    // Ersetzen Sie den Inhalt des aktuellen Dokuments mit dem geladenen HTML
+                    document.open();
+                    document.write(html);
+                    document.close();
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
 </html>
