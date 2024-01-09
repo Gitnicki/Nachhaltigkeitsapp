@@ -19,10 +19,11 @@
     </nav>
     <div class="wrapper">
         <h2>Registrieren</h2>
+        <!-- <div id="message"></div> -->
     <form action="/register" method="post">
         <div class="input-box">
             <label for="benutzername">Benutzername:</label>
-            <input type="text" placeholder="Benutzername" required>
+            <input type="text" name="benutzername" placeholder="Benutzername" required>
             <i class='bx bxs-user'></i>
         </div>
     <div class="input-box">
@@ -31,7 +32,7 @@
     </div>
     <div class="input-box">
         <label for="passwort">Passwort:</label>
-        <input type="passwort" placeholder="Passwort geben" required>
+        <input type="passwort" name="passwort" placeholder="Passwort geben" required>
     </div>
     <div class="input-box">
         <label for="confirm_password">Passwort bestätigen:</label>
@@ -46,6 +47,18 @@
     </form>
 
     </div>
+    <!-- <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const message = urlParams.get('message');
+            if (message) {
+                const messageDiv = document.getElementById('message');
+                const messageParagraph = document.createElement('p');
+                messageParagraph.textContent = decodeURIComponent(message);
+                messageDiv.appendChild(messageParagraph);
+            }
+        };
+    </script> -->
     <script src="/backend/app.js"></script>    
 </body>
 <footer class="navbar navbar-expand-lg bg-secondary" style="height: 60px;" data-bs-theme="dark">
