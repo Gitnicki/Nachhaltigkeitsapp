@@ -7,28 +7,30 @@
     <title>EcoLeaf</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 
 <body>
     <nav class="navbar bg-body-tertiary ecoleaf">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="home">
                 <img src="images/icon.jpg" alt="Icon" width="70" height="55" class="d-inline-block align-text-top">
                 EcoLeaf
             </a>
             <form class="container-fluid justify-content-start">
                 
-                <a href="login.html"><button class="btn btn-outline-success me-2" type="button">Anmelden</button></a>
-                <a href="register.html"><button class="btn btn-sm btn-outline-secondary" type="button">Registrieren</button></a>
+                <a href="login"><button class="btn btn-outline-success me-2" type="button">Anmelden</button></a>
+                <a href="/register"><button class="btn btn-sm btn-outline-secondary" type="button">Registrieren</button></a>
             </form>
         </div>
     </nav>
 <div class="popup"> 
     <div id="overlay"></div>
     <div id="popup">
-        <P>Willkommen bei EcoLeaf deine nachhaltige Lösung für eine grünere Zukunft! Entdecke, handle und verändere die Welt mit nur einem Klick.</P>
-        <button onclick="closePopup()">Schließen</button>
+        <P style="color: antiquewhite;">Willkommen bei EcoLeaf deine nachhaltige Lösung für eine grünere Zukunft! Entdecke, handle und verändere die Welt mit nur einem Klick.</P>
+        <!-- <button onclick="closePopup()">Schließen</button> -->
+        <br><br>
+        <img src="images/pflanze.jpg" style="height: 400px; width: 415px;" alt="Pflanze">
     </div>
 </div>
 
@@ -36,10 +38,10 @@
 <footer class="navbar navbar-expand-lg bg-secondary footer" style="height: 180px;" data-bs-theme="dark">
     <div class="container-fluid">
         <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
-            <li class="nav-item px-2"><a href="home.html" target="_self" class="nav-link">Home</a>
-            <li class="nav-item px-2"><a href="datenschutz.html" target="_self" class="nav-link">Datenschutz</a></li>
-            <li class="nav-item px-2"><a href="contact.html" target="_self" class="nav-link">Kontakt</a></li>
-            <li class="nav-item px-2"><a href="impressum.html" target="_self" class="nav-link">Impressum</a></li>
+            <li class="nav-item px-2"><a href="index" target="_self" class="nav-link">Home</a>
+            <li class="nav-item px-2"><a href="datenschutz" target="_self" class="nav-link">Datenschutz</a></li>
+            <li class="nav-item px-2"><a href="contact" target="_self" class="nav-link">Kontakt</a></li>
+            <li class="nav-item px-2"><a href="impressum" target="_self" class="nav-link">Impressum</a></li>
             </li>
         </ul>
     </div>
@@ -47,5 +49,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
 </html>
