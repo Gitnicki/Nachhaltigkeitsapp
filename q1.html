@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <form action="/processInput" method="post"></form>
     <nav class="navbar bg-body-tertiary ecoleaf">
         <div class="container-fluid">
             <a class="navbar-brand" href="index">
@@ -55,14 +56,14 @@
             <div class="bg-light">
             <h1>Welchen Kraftstoff tanken Sie?</h1>
             <br>
-            <div class="d-grid gap-2 col-6 mx-auto">
+            <div id="userInput" class="d-grid gap-2 col-6 mx-auto">
                 <a href="#simple-list-item-3"><button class="btn btn-secondary" id="benzin" type="button">Benzin</button></a>
                 <a href="#simple-list-item-3"><button class="btn btn-secondary" id="diesel" type="button">Diesel</button></a>
                 <a href="#simple-list-item-3"><button class="btn btn-secondary" id="hybrid-button" type="button">Hybrid</button></a>
                 <select name="Hybrid" id="hybrid">
                     <option id="hybrid-benzin" value="hybrid-benzin">hybrid-benzin</option>
-                    <option value="hybrid-diesel">hybrid-diesel</option>
-                    <option value="hybrid-gas">hybrid-gas</option>
+                    <option id="hybrid-diesel" value="hybrid-diesel">hybrid-diesel</option>
+                    <option id="hybrid-gas" value="hybrid-gas">hybrid-gas</option>
                 
                 </select>
                 <a href="#simple-list-item-3"><button class="btn btn-secondary" id="elektro" type="button">Elektro</button></a>

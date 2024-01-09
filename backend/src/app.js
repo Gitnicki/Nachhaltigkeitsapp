@@ -13,6 +13,8 @@
 // Fügen Sie hier Ihren eigenen Code für die app.js hinzu, falls erforderlich
 console.log("app.js wurde aufgerufen");
 
+const bodyParser = require('body-parser');
+
 const fs = require('fs');
 
 // Express importieren
@@ -163,11 +165,19 @@ app.get('/q1', function(req, res) {
 	// Render register template
 	res.sendFile(path.join(__dirname + '../../../q1.html'));
 });
+
+    // http://localhost:3000/q1
+app.get('/q1', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../q2.html'));
+});
+
 // http://localhost:3000/q2
 app.get('/q2', function(req, res) {
 	// Render register template
 	res.sendFile(path.join(__dirname + '../../../q2.html'));
 });
+
 // http://localhost:3000/q3
 app.get('/q3', function(req, res) {
 	// Render register template
@@ -280,3 +290,22 @@ app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 });
 
+  // Verwendung von bodyParser für das Parsen von Anfragekörpern
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// POST-Route für die Verarbeitung der Benutzereingabe und Speicherung in der Datenbank
+app.post('/processInput', (req, res) => {
+    const userInput = req.body.userInput;
+    console.log('erfolg')
+    const questionId = req.body.questionId; // Nehmen Sie die Frage-ID aus dem Anfragekörper
+    // Speichern Sie die Daten in der MySQL-Datenbank
+  db.query('INSERT INTO user_inputs (question_id, user_input) VALUES (?, ?)', [questionId, userInput], (err) => {
+    if (err) {
+      console.error('Fehler beim Speichern des Eintrags:', err);
+      res.status(500).send('Interner Serverfehler');
+    } else {
+      res.send(`Verarbeitete Eingabe: ${userInput}`);
+    }
+  });
+});

@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <form action="/processInput" method="post"></form>
     <nav class="navbar bg-body-tertiary ecoleaf">
         <div class="container-fluid">
             <a class="navbar-brand" href="index">
@@ -39,15 +40,15 @@
                 <h1>Welche Ernährungsform verfolgen Sie?</h1>
                 <div class="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
                     <div onclick="window.location = '#simple-list-item-2';">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio9" autocomplete="off" checked>
+                    <input id="ernährungsform" type="radio" class="btn-check" name="btnradio" id="btnradio9" autocomplete="off" checked>
                     <label class="btn btn-outline-secondary" for="btnradio9">Vegan</label>
                     </div>
                     <div onclick="window.location = '#simple-list-item-2';">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio10" autocomplete="off">
+                    <input id="ernährungsform" type="radio" class="btn-check" name="btnradio" id="btnradio10" autocomplete="off">
                     <label class="btn btn-outline-secondary" for="btnradio10">Vegetarisch</label>
                     </div>
                     <div onclick="window.location = '#simple-list-item-2';">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio11" autocomplete="off">
+                    <input id="ernährungsform" type="radio" class="btn-check" name="btnradio" id="btnradio11" autocomplete="off">
                     <label class="btn btn-outline-secondary" for="btnradio11">Flexitarier</label>
                     </div>
                 </div>
