@@ -191,7 +191,7 @@ app.use(session({
 	saveUninitialized: true
 }));
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join(__dirname)));
 
 //sign up route
 app.post('/register', (req, res) => {
@@ -214,7 +214,29 @@ app.post('/register', (req, res) => {
                                 return res.status(500).send('Fehler beim Server');
                             } else {
                                 // return res.status(201).send('Benutzer erfolgreich erstellt ');
-                                return res.status(201).sendFile(path.join(__dirname, '../../register.html'));
+                                // return res.status(201).sendFile(path.join(__dirname, '../../register.html'));
+                                // return res.status(201).redirect('/register.html?message=Benutzer%20erfolgreich%20erstellt');
+                            //     const scriptTag = `
+                            //     <script>
+                            //         alert('Benutzer erfolgreich erstellt');
+                            //         window.location.href = '/register';
+                            //     </script>
+                            // `;
+                            // return res.status(201).send(scriptTag);
+                            fs.readFile(path.join(__dirname, '../../register.html'), 'utf8', function (err, data) {
+                                if (err) {
+                                    console.error("Fehler beim Lesen der Datei: ", err);
+                                    return res.status(500).send('Fehler beim Server');
+                                }
+                                const scriptTag = `
+                                    <script>
+                                        alert('Benutzer erfolgreich erstellt');
+                                    </script>
+                                `;
+                                const modifiedData = data.replace('</body>', `${scriptTag}</body>`);
+                                res.status(201).send(modifiedData);
+                            });
+                            
                             }
                         });
                     }
