@@ -213,7 +213,8 @@ app.post('/register', (req, res) => {
                                 console.error("Fehler bei der Benutzerserstellung : ", error);
                                 return res.status(500).send('Fehler beim Server');
                             } else {
-                                return res.status(201).send('Benutzer erfolgreich erstellt ');
+                                // return res.status(201).send('Benutzer erfolgreich erstellt ');
+                                return res.status(201).sendFile(path.join(__dirname, '../../register.html'));
                             }
                         });
                     }
