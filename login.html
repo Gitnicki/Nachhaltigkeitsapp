@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 <body class="navbar">
-    <form action="/login" method="post">
+    <form action="/login" method="POST">
     <b class="navbar bg-body-tertiary login">
         <div class="container-fluid">
             <a class="navbar-brand" href="home.html">
@@ -22,11 +22,11 @@
         <form action="">
         <h1>Login</h1>
         <div class="input-box">
-            <input type="text" placeholder="Benutzername" required>
+            <input name="benutzername" type="text" placeholder="Benutzername" required>
             <i class='bx bxs-user'></i>
         </div>
         <div class="input-box">
-            <input type="passwort" placeholder="Passwort" required>
+            <input name="passwort" type="passwort" placeholder="Passwort" required>
             <i class='bx bxs-lock-alt' ></i>
         </div>
         <div class="remember-forgot">
