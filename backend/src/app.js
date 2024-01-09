@@ -4,6 +4,15 @@
 // var data = { name: "John", age: 30 };
 // var rendered = Mustache.render(template, data);
 
+var mime = require('mime-types')
+
+// Importieren Sie die routing.js-Datei
+// const routing = require ("./routing.js");
+
+console.log("gefunden")
+// Fügen Sie hier Ihren eigenen Code für die app.js hinzu, falls erforderlich
+console.log("app.js wurde aufgerufen");
+
 const fs = require('fs');
 
 // Express importieren
@@ -29,6 +38,18 @@ const mysql = require('mysql2');
 
 //dotenv package initialisieren
 const { config } = require('dotenv');
+
+app.use('/images', express.static(__dirname + '/images'));
+// Stellen Sie sicher, dass der Server statische Dateien aus dem "images"-Ordner bereitstellt
+
+
+app.use('/static', express.static(__dirname + '/public'));
+    // setHeaders: (res, path, stat) => {
+    //   if (path.endsWith('.js')) {
+    //     res.setHeader('Content-Type', 'application/javascript');
+    //   }
+//     }
+//   ));
 
 // Check if the .env file exists
 if (config().parsed == undefined) {

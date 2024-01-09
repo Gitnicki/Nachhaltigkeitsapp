@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('images/background.jpg'); /* Name Ihres Bildes */
+    background-image: url('/images/background.jpg'); /* Name Ihres Bildes */
     background-size: cover; /* Stellt sicher, dass das Bild den gesamten Bereich abdeckt */
     background-position: center; /* Zentriert das Bild */
     background-attachment: fixed; /* Optional: Fixiert das Bild beim Scrollen */
@@ -29,11 +29,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('images/background.jpg'); 
+  background-image: url('/images/background.jpg'); 
   background-size: cover; 
   background-position: center; 
   background-attachment: fixed;
-  ; 
 }
 
 
@@ -43,14 +42,14 @@ body {
   justify-content: center;
   text-align: center;
   font-size: xx-large;
-  background-image: url(images/background.jpg); 
+  background-image: url(/images/background.jpg); 
   background-size: cover; 
   background-position: center; 
   background-attachment: fixed; 
 }
 
 #header {
-  background-image: url(images/background.jpg);
+  background-image: url(/images/background.jpg);
   text-align: center;
   font-size: xx-large;
 }
@@ -238,8 +237,8 @@ overlay {
 
 .slider-value {
   position: absolute;
-  top: -30px
-left: 50%;
+  top: -30px;
+  left: 50%;
   transform: translateX(-50%);
   background-color: #333;
   color: #fff;
@@ -252,10 +251,3 @@ left: 50%;
 .slider-container:hover .slider-value {
   opacity: 1;
 }
-</style>
-</head>
-<body>
-<div class="slider-container">
-<input type="range" min="1" max="100" value="50" class="slider" id="mySlider">
-<div class="slider-value" id="sliderValue">50</div>
-</div>
