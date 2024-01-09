@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLeaf</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary ecoleaf">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/icon.jpg" alt="Icon" width="40" height="35" class="d-inline-block align-text-top">
+                EcoLeaf
+            </a>
+        </div>
+    </nav>
+
+<!-- https://getbootstrap.com/docs/5.3/components/scrollspy/#how-it-works -->
+<div class="row">
+    <div class="col-3">
+      <div id="simple-list-example" class="d-flex flex-column gap-5 simple-list-example-scrollspy text-center">
+        <a class="p-1 rounded" href="#simple-list-item-1" style="color: antiquewhite;">Auflösung </a>
+
+    </div>
+    </div>
+    <div class="col-8">
+    <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+        <h4 id="simple-list-item-1" style="color: antiquewhite;">Auflösung</h4>
+
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Ihr jährlicher CO2 Fußabdruck beträgt: </h1>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <input type="text" id="display" readonly>
+            </div>
+            <h1>Ihr jährlicher Wasserverbrauch beträgt: </h1>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <input type="text" id="displaywasser" readonly>
+                <button id="show" type="submit" class="btn btn-outline-secondary">Show</button>
+            <br>
+            </div>
+            </div>
+        </div>
+
+    <footer class="navbar navbar-expand-lg bg-secondary footer" style="height: 180px;" data-bs-theme="dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+                <li class="nav-item px-2"><a href="home.html" target="_self" class="nav-link">Home</a>
+                <li class="nav-item px-2"><a href="datenschutz.html" target="_self" class="nav-link">Datenschutz</a></li>
+                <li class="nav-item px-2"><a href="contact.html" target="_self" class="nav-link">Kontakt</a></li>
+                <li class="nav-item px-2"><a href="impressum.html" target="_self" class="nav-link">Impressum</a></li>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="frontend/fazit.js"></script>
+    </body>
+    </html>

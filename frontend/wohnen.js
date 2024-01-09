@@ -1,6 +1,6 @@
-  function co2berechnungwohnen(anzahlpersonen, anzahlstromkwh, strommix, heizform, heizkwh){
+  function co2berechnungwohnen(anzahlpersonen, anzahlstromkwh, strommix, heizform, heizkwh) {
     let co2EmissionenProKwh; // CO2-Emissionen pro kwh
-    let co2Emissionen = 0; // Gesamte CO2-Emissionen im Bereich Wohnen
+    let co2Emissionenwohnen = 0; // Gesamte CO2-Emissionen im Bereich Wohnen
 
       switch (strommix) {
         case 'erneuerbar':
@@ -21,7 +21,7 @@
         console.log(co2EmissionenProStunde);
         console.log(anzahlstromkwh);
         // Berechnung der CO2 Emissionen in g pro Jahr
-        co2Emissionen = anzahlstromkwh * co2EmissionenProStunde;
+        co2Emissionenwohnen = anzahlstromkwh * co2EmissionenProStunde;
       
         switch (heizform) {
         case 'heizoel':
@@ -42,9 +42,9 @@
         console.log(co2EmissionenProKwh);
         console.log(heizkwh);
         // Berechnung der CO2 Emissionen in g pro Jahr
-        co2Emissionen += heizkwh * co2EmissionenProKwh;
+        co2Emissionenwohnen += heizkwh * co2EmissionenProKwh;
 
-      return co2Emissionen / anzahlpersonen;
+      return co2Emissionenwohnen / anzahlpersonen;
       }
 
 
