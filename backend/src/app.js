@@ -190,7 +190,7 @@ app.use(session({
 	resave: true,
 	saveUninitialized: true
 }));
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 // app.use(express.static(path.join(__dirname, 'static')));
 
 //sign up route
@@ -198,6 +198,7 @@ app.post('/register', (req, res) => {
     const { benutzername, passwort, email } = req.body;
     console.log("req:", req.body);
     try{    
+
     if (benutzername && passwort && email){
             cnx.query('SELECT * FROM users WHERE benutzername = ? OR email = ?', [benutzername, email], function (error, results, fields) {
                 if (error) {
@@ -232,7 +233,9 @@ app.post('/register', (req, res) => {
 app.post('/login', (req, res) => {
     try {
         const { benutzername, passwort } = req.body;
-        console.log("req:", req.body);
+        console.log("benutzername", benutzername);
+        console.log("passwort",passwort);
+        //console.log("req:", req.body);
         if (benutzername && passwort){
             cnx.query('SELECT * FROM users WHERE benutzername = ? AND passwort = ?', [benutzername, passwort], function (error, results ,fields) {
                 if (error) throw error;
@@ -262,7 +265,8 @@ app.get('/home', function(req, res) {
 	// If the user is loggedin
 	if (req.session.loggedin) {
 		// Output username
-		res.send('Welcome back, ' + req.session.username + '!');
+		res.send('Welcome back, ' + req.session.benutzername + '!');
+        // res.sendFile(path.join(__dirname, 'public', 'home.html'));
 	} else {
 		// Not logged in
 		res.send('Please login to view this page!');
