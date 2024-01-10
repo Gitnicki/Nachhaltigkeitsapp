@@ -282,6 +282,7 @@ app.post('/login', (req, res) => {
 				    req.session.benutzername = benutzername;
                     res.redirect('/home');
                     const user_id = results[0].user_id;
+                    global.user_id = user_id;
                     console.log(user_id)
                     // const co2berechnungValues = {
                     //     user_id : user_id,
@@ -311,9 +312,11 @@ app.post('/login', (req, res) => {
     }
     
 });
+// const co2berechnungverkehr = require('./auto');
 // server side(app.js)
 app.post('/q1', (req, res) => {
-    const co2berechnungverkehr = req.body.co2berechnungverkehr; // data from auto.js
+    let co2berechnungverkehr = 0;
+    co2berechnungverkehr = req.body.co2berechnungverkehr; // data from auto.js
     console.log(co2berechnungverkehr);
     const co2berechnungValues = {
                         user_id : user_id,
