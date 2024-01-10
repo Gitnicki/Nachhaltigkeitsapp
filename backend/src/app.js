@@ -248,7 +248,7 @@ app.post('/register.html', (req, res) => {
                             //     </script>
                             // `;
                             // return res.status(201).send(scriptTag);
-                            fs.readFile(path.join(__dirname, '../../../register.html'), 'utf8', function (err, data) {
+                            fs.readFile(path.join(__dirname, '/../../frontend/register.html'), 'utf8', function (err, data) {
                                 if (err) {
                                     console.error("Fehler beim Lesen der Datei: ", err);
                                     return res.status(500).send('Fehler beim Server');
