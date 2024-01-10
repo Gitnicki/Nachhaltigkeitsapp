@@ -41,7 +41,7 @@ const mysql = require('mysql2');
 //dotenv package initialisieren
 const { config } = require('dotenv');
 
-app.use('/images', express.static(__dirname + '/images'));
+app.use('/images', express.static(__dirname + '../images'));
 // Stellen Sie sicher, dass der Server statische Dateien aus dem "images"-Ordner bereitstellt
 
 
@@ -122,81 +122,82 @@ const cnx = getConnection();
 // http://localhost:3000/login
 app.get('/login', function(req, res) {
 	// Render login template
-	res.sendFile(path.join(__dirname + '../../../login.html'));
+	res.sendFile(path.join(__dirname + '../../../../login.html'));
 });
 
 // http://localhost:3000/register
 app.get('/register', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../register.html'));
+	res.sendFile(path.join(__dirname + '../../../../register.html'));
 });
 
 // http://localhost:3000/home
 app.get('/home', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../home.html'));
+	res.sendFile(path.join(__dirname + '../../../../home.html'));
 });
 
 // http://localhost:3000/index
 app.get('/index', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../index.html'));
+	res.sendFile(path.join(__dirname + '../../../../index.html'));
 });
 
 // http://localhost:3000/impressum
 app.get('/impressum', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../impressum.html'));
+	res.sendFile(path.join(__dirname + '../../../../impressum.html'));
 });
 
 // http://localhost:3000/contact
 app.get('/contact', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../contact.html'));
+	res.sendFile(path.join(__dirname + '../../../../contact.html'));
 });
 
 // http://localhost:3000/datenschutz
 app.get('/datenschutz', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../datenschutz.html'));
+	res.sendFile(path.join(__dirname + '../../../../datenschutz.html'));
 });
 // http://localhost:3000/q1
 app.get('/q1', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../q1.html'));
+	res.sendFile(path.join(__dirname + '../../../../q1.html'));
 });
 
 // http://localhost:3000/q2
 app.get('/q2', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../q2.html'));
+	res.sendFile(path.join(__dirname + '../../../../q2.html'));
 });
 
 // http://localhost:3000/q3
 app.get('/q3', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../q3.html'));
+	res.sendFile(path.join(__dirname + '../../../../q3.html'));
 });
 // http://localhost:3000/q4
 app.get('/q4', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../q4.html'));
+	res.sendFile(path.join(__dirname + '../../../../q4.html'));
 });
 // http://localhost:3000/q5
 app.get('/q5', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../q5.html'));
+	res.sendFile(path.join(__dirname + '../../../../q5.html'));
 });
 // http://localhost:3000/co2
 app.get('/co2', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../co2.html'));
+	res.sendFile(path.join(__dirname + '../../../../co2.html'));
 });
 // http://localhost:3000/zusammenfassung
 app.get('/zusammenfassung', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../zusammenfassung.html'));
+	res.sendFile(path.join(__dirname + '../../../../zusammenfassung.html'));
 });
+
 
 // Express Session konfigurieren
 app.use(session({

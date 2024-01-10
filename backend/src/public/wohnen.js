@@ -64,5 +64,5 @@ document.getElementById('button-berechnen').addEventListener('click', function (
 // Definieren Sie eine GET-Route für q4.html
 app.get('/q4', (req, res) => {
   // Verwenden Sie path.join, um den vollständigen Pfad zur q4.html zu erstellen
-  const filePath = path.join(__dirname, + '../../../q4.html');
+  const filePath = path.join(__dirname, + '../../../../q4.html');
   res.sendFile(filePath);})

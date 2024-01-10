@@ -54,6 +54,6 @@ document.getElementById('show').addEventListener('click', function () {
   // Definieren Sie eine GET-Route für zusammenfassung.html
 app.get('/zusammenfassung', (req, res) => {
   // Verwenden Sie path.join, um den vollständigen Pfad zur zusammenfassung.html zu erstellen
-  const filePath = path.join(__dirname, + '../../../zusammenfassung.html');
+  const filePath = path.join(__dirname, + '../../../../zusammenfassung.html');
   res.sendFile(filePath);})
 
