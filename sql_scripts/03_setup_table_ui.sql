@@ -1,12 +1,13 @@
 USE Co2;
 
-CREATE TABLE IF NOT EXISTS user_inputs (
+CREATE TABLE IF NOT EXISTS co2endberechnung (
+  user_id INT, 
   id INT AUTO_INCREMENT PRIMARY KEY,
-  question_id VARCHAR(255),
-  user_input VARCHAR(255), 
-  kraftstoffausstoss VARCHAR(255),
-  freizeitverbrauch VARCHAR(255),
-  wasserverbrauch VARCHAR(255),
-  stromverbrauch VARCHAR(255),
-  haushaltverbrauch VARCHAR(255)
+  verkehresmittel INT,
+  ernaehrung INT, 
+  freizeitverbrauch INT,
+  wasserverbrauch INT,
+  haushaltverbrauch INT,
+  gesamtverbrauch INT,
+  FOREIGN KEY (user_id) REFERENCES users(user_id) 
 );

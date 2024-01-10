@@ -307,11 +307,7 @@ app.get('/home', function(req, res) {
 	res.end();
 });
 
-// localhost listen port app 
-app.listen(port, () => {
-    
-    console.log(`Example app listening at http://localhost:${port}`);
-});
+
 
   // Verwendung von bodyParser für das Parsen von Anfragekörpern
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -319,16 +315,29 @@ app.use(bodyParser.json());
 
 // POST-Route für die Verarbeitung der Benutzereingabe und Speicherung in der Datenbank
 app.post('/processInput', (req, res) => {
-    const userInput = req.body.userInput;
-    console.log('erfolg')
-    const questionId = req.body.questionId; // Nehmen Sie die Frage-ID aus dem Anfragekörper
-    // Speichern Sie die Daten in der MySQL-Datenbank
-  db.query('INSERT INTO user_inputs (question_id, user_input) VALUES (?, ?)', [questionId, userInput], (err) => {
-    if (err) {
-      console.error('Fehler beim Speichern des Eintrags:', err);
-      res.status(500).send('Interner Serverfehler');
-    } else {
-      res.send(`Verarbeitete Eingabe: ${userInput}`);
+    try {
+        const userInput = req.body.userInput;
+        console.log('erfolg');
+        const questionId = req.body.questionId; // Frage-ID aus dem Anfragekörper holen
+        // Daten in der MySQL-Datenbank speichern
+        cnx.query('INSERT INTO user_inputs (question_id, user_input) VALUES (?, ?)', [questionId, userInput], function (error, result) {
+            if (error) {
+                console.error('Fehler beim Speichern des Eintrags:', error);
+                return res.status(500).send('Interner Serverfehler');
+            } else {
+                return res.status(200).send('Daten erfolgreich gespeichert');
+            }
+        });
+    } catch (error) {
+        console.error("Ein Fehler ist aufgetreten: ", error);
+        return res.status(500).send('Serverfehler');
     }
-  });
+});
+
+
+
+// localhost listen port app 
+app.listen(port, () => {
+    
+    console.log(`Example app listening at http://localhost:${port}`);
 });
