@@ -41,17 +41,17 @@ const mysql = require('mysql2');
 //dotenv package initialisieren
 const { config } = require('dotenv');
 
-app.use('/images', express.static(__dirname + '/images'));
+app.use('/images', express.static(__dirname + '../images'));
 // Stellen Sie sicher, dass der Server statische Dateien aus dem "images"-Ordner bereitstellt
 
 
 app.use('/static', express.static(__dirname + '/public'));
-    // setHeaders: (res, path, stat) => {
-    //   if (path.endsWith('.js')) {
-    //     res.setHeader('Content-Type', 'application/javascript');
-    //   }
-//     }
-//   ));
+    setHeaders: (res, path, stat) => {
+      if (path.endsWith('.js')) {
+        res.setHeader('Content-Type', 'application/javascript');
+      }
+    };
+
 
 // Check if the .env file exists
 if (config().parsed == undefined) {
@@ -187,11 +187,18 @@ app.get('/q5', function(req, res) {
 	// Render register template
 	res.sendFile(path.join(__dirname + '../../../q5.html'));
 });
-// http://localhost:3000/endberechnung
-// app.get('/endberechnung', function(req, res) {
-// 	// Render enfberechnung template
-// 	res.sendFile(path.join(__dirname + '../../../zusammenfassung.html'));
-// });
+// http://localhost:3000/co2
+app.get('/co2', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../co2.html'));
+});
+// http://localhost:3000/zusammenfassung
+app.get('/zusammenfassung', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../zusammenfassung.html'));
+});
+
+
 // Express Session konfigurieren
 app.use(session({
 	secret: 'secret',

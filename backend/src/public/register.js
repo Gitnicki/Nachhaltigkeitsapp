@@ -15,6 +15,6 @@ function Registrieren(id) {
 // Definieren Sie eine GET-Route für home.html
 app.get('/login', (req, res) => {
     // Verwenden Sie path.join, um den vollständigen Pfad zur home.html zu erstellen
-    const filePath = path.join(__dirname, + '../../../login.html');
+    const filePath = path.join(__dirname, + '../../../../login.html');
     res.sendFile(filePath);})
 

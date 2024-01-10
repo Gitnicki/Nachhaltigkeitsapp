@@ -51,3 +51,9 @@ document.getElementById('show').addEventListener('click', function () {
     console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', endco2berechnung);
   });
 
+  // Definieren Sie eine GET-Route für zusammenfassung.html
+app.get('/zusammenfassung', (req, res) => {
+  // Verwenden Sie path.join, um den vollständigen Pfad zur zusammenfassung.html zu erstellen
+  const filePath = path.join(__dirname, + '../../../../zusammenfassung.html');
+  res.sendFile(filePath);})
+

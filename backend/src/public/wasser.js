@@ -83,3 +83,9 @@ document.getElementById('button-berechnen').addEventListener('click', function (
   const wasserverbrauch = waterperUse(sliderwaschmaschinew, slidergeschirrspuelerw, sliderduschenw, sliderbadenw, sliderreinigenw, slidergartenw, sliderkochenw);
   console.log('Geschätzte Wasser-Nutzung:', wasserverbrauch);
 });
+
+// Definieren Sie eine GET-Route für q3.html
+app.get('/q3', (req, res) => {
+  // Verwenden Sie path.join, um den vollständigen Pfad zur q3.html zu erstellen
+  const filePath = path.join(__dirname, + '../../../../q3.html');
+  res.sendFile(filePath);})

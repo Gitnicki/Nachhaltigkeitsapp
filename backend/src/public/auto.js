@@ -114,3 +114,9 @@ fetch('/q1', {
 //       }
 //     });
 //   });
+
+// Definieren Sie eine GET-Route für q1.html
+app.get('/q1', (req, res) => {
+    // Verwenden Sie path.join, um den vollständigen Pfad zur q1.html zu erstellen
+    const filePath = path.join(__dirname, + '../../../../q1.html');
+    res.sendFile(filePath);})
