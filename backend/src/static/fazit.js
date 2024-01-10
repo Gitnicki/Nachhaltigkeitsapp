@@ -35,5 +35,5 @@ document.getElementById('show').addEventListener('click', function () {
 
 
     const endco2berechnung = fazitberechnung(display, displaywasser);
-    console.log('Geschätzte CO2-Emissionen für das gesamte Jahr in allen Kategorien:', endco2berechnung);
+    console.log('Geschätzte CO2-Emissionen für das gesamte Jahr in Tonnen:', endco2berechnung);
   });
