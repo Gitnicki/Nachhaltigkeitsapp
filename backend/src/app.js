@@ -193,6 +193,16 @@ app.get('/q5', function(req, res) {
 	// Render register template
 	res.sendFile(path.join(__dirname + '../../../q5.html'));
 });
+// http://localhost:3000/co2
+app.get('/co2', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../co2.html'));
+});
+// http://localhost:3000/zusammenfassung
+app.get('/zusammenfassung', function(req, res) {
+	// Render register template
+	res.sendFile(path.join(__dirname + '../../../zusammenfassung.html'));
+});
 
 // Express Session konfigurieren
 app.use(session({
