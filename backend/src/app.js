@@ -41,11 +41,11 @@ const mysql = require('mysql2');
 //dotenv package initialisieren
 const { config } = require('dotenv');
 
-app.use('/images', express.static(__dirname + '../images'));
+app.use('/images', express.static(__dirname + '/static/images'));
 // Stellen Sie sicher, dass der Server statische Dateien aus dem "images"-Ordner bereitstellt
 
 
-app.use('/static', express.static(__dirname + '/public'));
+app.use('/static', express.static(__dirname + '/static'));
     setHeaders: (res, path, stat) => {
       if (path.endsWith('.js')) {
         res.setHeader('Content-Type', 'application/javascript');
@@ -119,85 +119,87 @@ function getConnection() {
 }
 const cnx = getConnection(); 
 
+app.use('/', express.static(__dirname + '../../../frontend/'));
+/*
 // http://localhost:3000/login
 app.get('/login', function(req, res) {
 	// Render login template
-	res.sendFile(path.join(__dirname + '../../../login.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/login.html'));
 });
 
 // http://localhost:3000/register
 app.get('/register', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../register.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/register.html'));
 });
 
 // http://localhost:3000/home
 app.get('/home', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../home.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/home.html'));
 });
 
 // http://localhost:3000/index
 app.get('/index', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../index.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/index.html'));
 });
 
 // http://localhost:3000/impressum
 app.get('/impressum', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../impressum.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/impressum.html'));
 });
 
 // http://localhost:3000/contact
 app.get('/contact', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../contact.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/contact.html'));
 });
 
 // http://localhost:3000/datenschutz
 app.get('/datenschutz', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../datenschutz.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/datenschutz.html'));
 });
 // http://localhost:3000/q1
 app.get('/q1', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../q1.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/q1.html'));
 });
 
 // http://localhost:3000/q2
 app.get('/q2', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../q2.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/q2.html'));
 });
 
 // http://localhost:3000/q3
 app.get('/q3', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../q3.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/q3.html'));
 });
 // http://localhost:3000/q4
 app.get('/q4', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../q4.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/q4.html'));
 });
 // http://localhost:3000/q5
 app.get('/q5', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../q5.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/q5.html'));
 });
 // http://localhost:3000/co2
 app.get('/co2', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../co2.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/co2.html'));
 });
 // http://localhost:3000/zusammenfassung
 app.get('/zusammenfassung', function(req, res) {
 	// Render register template
-	res.sendFile(path.join(__dirname + '../../../zusammenfassung.html'));
+	res.sendFile(path.join(__dirname + '../../../frontend/zusammenfassung.html'));
 });
-
+*/
 
 // Express Session konfigurieren
 app.use(session({
