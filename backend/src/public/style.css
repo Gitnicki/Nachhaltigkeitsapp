@@ -43,10 +43,10 @@ display: flex;
 justify-content: center;
 text-align: center;
 font-size: xx-large;
-/* background-image: url(/images/background.jpg); 
+background-image: url(/images/background.jpg); 
 background-size: cover; 
 background-position: center; 
-background-attachment: fixed;  */
+background-attachment: fixed; 
 }
 #contact
   {
