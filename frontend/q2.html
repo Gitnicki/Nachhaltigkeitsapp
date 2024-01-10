@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoLeaf</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <form action="/processInput" method="post"></form>
+    <nav class="navbar bg-body-tertiary ecoleaf">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/icon.jpg" alt="Icon" width="40" height="35" class="d-inline-block align-text-top">
+                EcoLeaf
+            </a>
+        </div>
+    </nav>
+
+
+
+
+<!-- https://getbootstrap.com/docs/5.3/components/scrollspy/#how-it-works -->
+<div class="row">
+    <div class="col-3">
+      <div id="simple-list-example" class="d-flex flex-column gap-5 simple-list-example-scrollspy text-center">
+        <a class="p-1 rounded" href="#simple-list-item-1" style="color: antiquewhite;">Frage 1</a>
+        <a class="p-1 rounded" href="#simple-list-item-2" style="color: antiquewhite;">Frage 2</a>
+        <a class="p-1 rounded" href="#simple-list-item-3" style="color: antiquewhite;">Frage 3</a>
+        <a class="p-1 rounded" href="#simple-list-item-4" style="color: antiquewhite;">Frage 4</a>
+        <a class="p-1 rounded" href="#simple-list-item-5" style="color: antiquewhite;">Frage 5</a>
+        <a class="p-1 rounded" href="#simple-list-item-6" style="color: antiquewhite;">Frage 6</a>
+        <a class="p-1 rounded" href="#simple-list-item-7" style="color: antiquewhite;">Frage 7</a>
+        <a class="p-1 rounded" href="#simple-list-item-8" style="color: antiquewhite;">Frage 8</a>
+        <a class="p-1 rounded" href="#simple-list-item-9" style="color: antiquewhite;">Frage 9</a>
+        <a class="p-1 rounded" href="#simple-list-item-10" style="color: antiquewhite;">Frage 10</a>
+        <a class="p-1 rounded" href="#simple-list-item-11" style="color: antiquewhite;">Frage 11</a>
+        <!-- <a class="p-1 rounded" href="#simple-list-item-12" style="color: antiquewhite;">Zusammenfassung</a> -->
+        </div>
+    </div>
+    <div class="col-8">
+      <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+        <h4 id="simple-list-item-1" style="color: antiquewhite;">Frage 1</h4>
+
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Gehört das Spielen von Videospielen zu Ihren Hobbies?</h1>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <select name="" id="dropdownisgaming">
+                        <option value="Ja">Ja</option>
+                        <option value="Nein">Nein</option>
+                    </select>
+                    </div>
+                </div>
+                </div>
+            </div>
+        <h4 id="simple-list-item-2" style="color: antiquewhite;">Frage 2</h4> 
+
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Welche Platform nutzen Sie vorwiegend?</h1>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <select name="" id="platform">
+                    <option value="standpc">StandPC</option>
+                    <option value="gaminglaptop">Gaming-Laptop</option>
+                    <option value="ps4">PS4/PS4 Pro</option>
+                    <option value="ps5">PS5</option>
+                    <option value="xbox">Xbox One/X/S</option>
+                    <option value="nintendo">Nintendo Switch/ Lite</option>
+                </select>
+            </div>
+            </div>
+        </div>
+        <h4 id="simple-list-item-3" style="color: antiquewhite;">Frage 3</h4>
+
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Wie viele Stunden spielen Sie pro Woche?</h1>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <div class="input-group mb-1">
+                        <input type="text" class="" id="gamingh" placeholder="h" aria-label="h" aria-describedby="gaminghb">
+                        <a href="#simple-list-item-4"><button class="btn btn-outline-secondary" type="button" id="gaminghb">Weiter</button></a>
+                      </div>
+                      <br>
+                </div>
+                </div>
+            </div> 
+        <h4 id="simple-list-item-4" style="color: antiquewhite;">Frage 4</h4>  
+        
+        <div class="container mt-4">
+            <div class="bg-light">
+                <h1>Streamen Sie regelmäßig Filme und/oder Serien?</h1>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <select name="" id="dropdownisstreaming">
+                        <option value="Ja">Ja</option>
+                        <option value="Nein">Nein</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <h4 id="simple-list-item-5" style="color: antiquewhite;">Frage 5</h4> 
+        
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Wie viele Stunden streamen Sie pro Woche?</h1>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <div class="input-group mb-1">
+                        <input type="text" class="" id="streamingh" placeholder="h" aria-label="h" aria-describedby="streaminghb">
+                        <a href="#simple-list-item-6"><button class="btn btn-outline-secondary" type="submit" value="Absenden" id="streaminghb">Weiter</button></a>
+                      </div>
+                      <br>
+                </div>
+                </div>
+            </div> 
+
+        <h4 id="simple-list-item-6" style="color: antiquewhite;">Frage 6</h4> 
+        
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Nutzen Sie regelmäßig Social-Media Apps?</h1>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <select name="" id="dropdownissocialmedia">
+                    <option value="Ja">Ja</option>
+                    <option value="Nein">Nein</option>
+                </select>
+            </div>
+                </div>
+            </div> 
+
+        <h4 id="simple-list-item-7" style="color: antiquewhite;">Frage 7</h4> 
+        
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Wie viele Stunden nutzen Sie diese pro Woche?</h1>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <div class="input-group mb-1">
+                        <input type="text" class="" id="socialh" placeholder="h" aria-label="h" aria-describedby="socialhb">
+                        <a href="#simple-list-item-8"><button class="btn btn-outline-secondary" type="submit" value="Absenden" id="socialhb">Weiter</button></a>
+                      </div>
+                      <br>
+                </div>
+                </div>
+            </div> 
+
+        <h4 id="simple-list-item-8" style="color: antiquewhite;">Frage 8</h4> 
+        
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Lesen Sie regelmäßig Zeitung?</h1>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <select name="" id="dropdowniszeitung">
+                    <option value="Ja">Ja</option>
+                    <option value="Nein">Nein</option>
+                </select>
+            </div>
+                </div>
+            </div> 
+
+        <h4 id="simple-list-item-9" style="color: antiquewhite;">Frage 9</h4> 
+        
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Lesen Sie diese in digitaler oder gedruckter Form?</h1>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <select name="" id="dropdowniszeitungdp">
+                    <option value="Digital">Digital</option>
+                    <option value="Print">Print</option>
+                </select>
+            </div>
+                </div>
+            </div> 
+
+        <h4 id="simple-list-item-10" style="color: antiquewhite;">Frage 10</h4> 
+        
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Haben Sie Haustiere?</h1>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <select name="" id="dropdownistiere">
+                    <option value="Ja">Ja</option>
+                    <option value="Nein">Nein</option>
+                </select>
+            </div>
+                </div>
+            </div> 
+
+        <h4 id="simple-list-item-11" style="color: antiquewhite;">Frage 11</h4> 
+        
+        <div class="container mt-4">
+            <div class="bg-light">
+            <h1>Welches Tier und wie viele besitzen Sie?</h1>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="input-group mb-1">
+                    <select name="" id="dropdownwelchestier">
+                        <option value="Hund">Hund/e</option>
+                        <option value="Katze">Katze/n</option>
+                        <option value="Kleintier">Kleintier/e</option>
+                        <option value="Pferd">Pferd/e</option>
+                        <option value="Vogel">Vogel</option>
+                    </select>
+                    <select name="" id="dropdownanzahltiere">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <!-- geht so leider nicht.. könnte man mit neuen ids implementieren?
+                        <select name="" id="dropdownwelchestier">
+                        <option value="Hund">Hund/e</option>
+                        <option value="Katze">Katze/n</option>
+                        <option value="Kleintier">Kleintier/e</option>
+                        <option value="Pferd">Pferd/e</option>
+                        <option value="Vogel">Vogel</option>
+                    </select>
+                    <select name="" id="dropdownanzahltiere">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select> -->
+                </div>
+            </div>
+            </div>
+
+            <!-- <h4 id="simple-list-item-12" style="color: antiquewhite;">Zusammenfassung</h4>
+
+            <div class="container mt-4">
+
+                <div class="bg-light">
+                <h1>Zusammen- fassung</h1>
+                <div class="d-grid gap-2 col-6 mx-auto">
+
+                <div class="input1">
+                    <p>Ergebnis aus Frage 1</p>
+                  </div>
+                  <div class="input2">
+                    <p>Ergebnis aus Frage 2</p>
+                  </div>
+                  <div class="input3">
+                    <p>Ergebnis aus Frage 3....etc</p>
+                  </div>
+                </div>
+                </div>
+            </div> -->
+                
+        </div>
+        <!-- <a href="q3.html"> -->
+        <button type="submit" id="button-berechnen" class="btn btn-green"> <img src="images/rechter-pfeil.png" title="Pfeil Icons erstellt von rang - Flaticon" width="100px" height="100px"/></button><!--</a>-->
+        <button id="abgebenq2" type="button" class="btn"><a href="q3.html" target="_self" class="nav-link">nächste seite</a></button>
+        <br><br><br>
+    </div>
+</div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br>
+
+
+<footer class="navbar navbar-expand-lg bg-secondary footer" style="height: 180px;" data-bs-theme="dark">
+    <div class="container-fluid">
+        <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+            <li class="nav-item px-2"><a href="home.html" target="_self" class="nav-link">Home</a></li>
+            <li class="nav-item px-2"><a href="datenschutz.html" target="_self" class="nav-link">Datenschutz</a></li>
+            <li class="nav-item px-2"><a href="contact.html" target="_self" class="nav-link">Kontakt</a></li>
+            <li class="nav-item px-2"><a href="impressum.html" target="_self" class="nav-link">Impressum</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+<script src="/static/freizeit.js"></script>
+</body>
+</html>
+
