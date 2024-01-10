@@ -100,5 +100,6 @@ document.getElementById('button-berechnen').addEventListener('click', function (
 
   const co2berechnungfreizeit = co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisstreaming, streamingHours, dropdownissocialmedia, socialHours, dropdowniszeitung, dropdowniszeitungdp, dropdownistiere, dropdownwelchestier, dropdownanzahltiere);
   console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnungfreizeit);
+  localStorage.setItem("freizeit_co2", co2berechnungfreizeit);
 });
 

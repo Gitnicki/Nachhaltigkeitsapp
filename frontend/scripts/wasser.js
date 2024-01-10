@@ -82,4 +82,5 @@ document.getElementById('button-berechnen').addEventListener('click', function (
 
   const wasserverbrauch = waterperUse(sliderwaschmaschinew, slidergeschirrspuelerw, sliderduschenw, sliderbadenw, sliderreinigenw, slidergartenw, sliderkochenw);
   console.log('Geschätzte Wasser-Nutzung:', wasserverbrauch);
+  localStorage.setItem("wasser_verbrauch", wasserverbrauch);
 });

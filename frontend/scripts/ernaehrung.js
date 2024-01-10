@@ -24,5 +24,6 @@ document.getElementById('button-berechnen').addEventListener('click', function (
 
   const co2berechnung = co2berechnungernaehrung(ernaehrungsart);
   console.log('Geschätzte CO2-Emissionen für die Ernährung:', co2berechnung);
+  localStorage.setItem("ernaehrung_co2", co2berechnung);
 });
   

@@ -64,25 +64,26 @@ document.getElementById('button-berechnen').addEventListener('click', function (
 
     const co2berechnung = co2berechnungverkehr(fahrzeugnutzung, kraftstoff, verbrauch, kmprojahr, dropdownifbusbahn, kmjahroeffis);
     console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnung);
+    localStorage.setItem("auto_co2", co2berechnung);
   });
 
   // client (auto.js)
-const co2berechnungverkehr = 16;
+// const co2berechnungverkehr = 16;
 
-fetch('/q1', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ co2berechnungverkehr: co2berechnungverkehr }),
-})
-    .then(res => res.json())
-    .then(data => {
-    console.log('Response Server :', data);
-    })
-    .catch(error => {
-    console.error('Error :', error);
-    });
+// fetch('/q1', {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({ co2berechnungverkehr: co2berechnungverkehr }),
+// })
+//     .then(res => res.json())
+//     .then(data => {
+//     console.log('Response Server :', data);
+//     })
+//     .catch(error => {
+//     console.error('Error :', error);
+//     });''
 
 
 //   module.exports = co2berechnungverkehr;

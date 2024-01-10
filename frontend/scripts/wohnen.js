@@ -59,4 +59,5 @@ document.getElementById('button-berechnen').addEventListener('click', function (
 
   const co2berechnung = co2berechnungwohnen(anzahlpersonen, anzahlstromkwh, strommix, heizform, heizkwh);
   console.log('Geschätzte CO2-Emissionen für die Wohn-Nutzung:', co2berechnung);
+  localStorage.setItem("wohnen_co2", co2berechnung);
 });
