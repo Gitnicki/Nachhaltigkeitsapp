@@ -3,7 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('images/background.jpg'); /* Name Ihres Bildes */
+  background-image: url('/images/background.jpg'); /* Name Ihres Bildes */
   background-size: cover; /* Stellt sicher, dass das Bild den gesamten Bereich abdeckt */
   background-position: center; /* Zentriert das Bild */
   background-attachment: fixed; /* Optional: Fixiert das Bild beim Scrollen */
@@ -31,7 +31,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 100vh;
-background-image: url('images/background.jpg'); 
+background-image: url('/images/background.jpg'); 
 background-size: cover; 
 background-position: center; 
 background-attachment: fixed;
@@ -44,7 +44,7 @@ display: flex;
 justify-content: center;
 text-align: center;
 font-size: xx-large;
-background-image: url(images/background.jpg); 
+background-image: url(/images/background.jpg); 
 background-size: cover; 
 background-position: center; 
 background-attachment: fixed; 
