@@ -25,7 +25,7 @@ function fazitberechnung(display, displaywasser) {
    display.value = Endco2Emissionen;
     displaywasser.value = wasserberechnung;
     
-    return Endco2Emissionen;
+    return Endco2Emissionen / 1000000;
 };
 
 // Anruf der Funktion
