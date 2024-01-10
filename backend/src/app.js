@@ -52,6 +52,14 @@ app.use('/static', express.static(__dirname + '/public'));
       }
     };
 
+app.use(express.static(path.join(__dirname, '/frontend')));
+// app.use('/frontend', express.static(__dirname + '../../'+'frontend'));
+//     setHeaders: (res, path, stat) => {
+//       if (path.endsWith('.js')) {
+//         res.setHeader('Content-Type', 'application/javascript');
+//       }
+//     };
+
 // Check if the .env file exists
 if (config().parsed == undefined) {
     console.error('Error: .env file is missing (copy/adapt .env.example and rename it to .env)');
