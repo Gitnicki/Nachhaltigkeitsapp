@@ -46,12 +46,11 @@ app.use('/images', express.static(__dirname + '/images'));
 
 
 app.use('/static', express.static(__dirname + '/public'));
-    // setHeaders: (res, path, stat) => {
-    //   if (path.endsWith('.js')) {
-    //     res.setHeader('Content-Type', 'application/javascript');
-    //   }
-//     }
-//   ));
+    setHeaders: (res, path, stat) => {
+      if (path.endsWith('.js')) {
+        res.setHeader('Content-Type', 'application/javascript');
+      }
+    };
 
 // Check if the .env file exists
 if (config().parsed == undefined) {
@@ -164,12 +163,6 @@ app.get('/datenschutz', function(req, res) {
 app.get('/q1', function(req, res) {
 	// Render register template
 	res.sendFile(path.join(__dirname + '../../../q1.html'));
-});
-
-    // http://localhost:3000/q1
-app.get('/q1', function(req, res) {
-	// Render register template
-	res.sendFile(path.join(__dirname + '../../../q2.html'));
 });
 
 // http://localhost:3000/q2
