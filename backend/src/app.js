@@ -166,12 +166,6 @@ app.get('/q1', function(req, res) {
 	res.sendFile(path.join(__dirname + '../../../q1.html'));
 });
 
-    // http://localhost:3000/q1
-app.get('/q1', function(req, res) {
-	// Render register template
-	res.sendFile(path.join(__dirname + '../../../q2.html'));
-});
-
 // http://localhost:3000/q2
 app.get('/q2', function(req, res) {
 	// Render register template
@@ -193,7 +187,11 @@ app.get('/q5', function(req, res) {
 	// Render register template
 	res.sendFile(path.join(__dirname + '../../../q5.html'));
 });
-
+// http://localhost:3000/endberechnung
+// app.get('/endberechnung', function(req, res) {
+// 	// Render enfberechnung template
+// 	res.sendFile(path.join(__dirname + '../../../zusammenfassung.html'));
+// });
 // Express Session konfigurieren
 app.use(session({
 	secret: 'secret',
@@ -261,8 +259,7 @@ app.post('/register', (req, res) => {
     }
     });
 
-    const co2berechnungverkehr = require('../../frontend/auto');
-    console.log(co2berechnungverkehr);
+   
 //login route
 app.post('/login', (req, res) => {
     try {
@@ -277,18 +274,20 @@ app.post('/login', (req, res) => {
                     req.session.loggedin = true;
 				    req.session.benutzername = benutzername;
                     res.redirect('/home');
-                    const co2berechnungValues = {
-                        user_id: results[0].user_id;
-                        verkehresmittel = co2berechnungverkehr,
-                        ernaehrung : 10, 
-                        freizeitverbrauch : 10,
-                        wasserverbrauch : 10,
-                        haushaltverbrauch : 10,
-                        gesamtverbrauch : 10,
-                    };
-                    cnx.query('INSERT INTO co2endberechnung SET ?', co2berechnungValues, function (error, results, fields) {
-                        if (error) throw error;
-                    });
+                    const user_id = results[0].user_id;
+                    console.log(user_id)
+                    // const co2berechnungValues = {
+                    //     user_id : user_id,
+                    //     verkehresmittel : co2berechnungverkehr,
+                    //     ernaehrung : 10, 
+                    //     freizeitverbrauch : 10,
+                    //     wasserverbrauch : 10,
+                    //     haushaltverbrauch : 10,
+                    //     gesamtverbrauch : 10,
+                    // };
+                    // cnx.query('INSERT INTO co2endberechnung SET ?', co2berechnungValues, function (error, results, fields) {
+                    //     if (error) throw error;
+                    // });
                 } else {
                     res.send('Falscher Benutzername und/oder Passwort!');
                 }			
@@ -305,6 +304,29 @@ app.post('/login', (req, res) => {
     }
     
 });
+// server side(app.js)
+app.post('/q1', (req, res) => {
+    const co2berechnungverkehr = req.body.co2berechnungverkehr; // data from auto.js
+    console.log(co2berechnungverkehr);
+    const co2berechnungValues = {
+                        user_id : user_id,
+                        verkehresmittel : co2berechnungverkehr,
+                        ernaehrung : 10, 
+                        freizeitverbrauch : 10,
+                        wasserverbrauch : 10,
+                        haushaltverbrauch : 10,
+                        gesamtverbrauch : 10,
+                    };
+                    cnx.query('INSERT INTO co2endberechnung SET ?', co2berechnungValues, function (error, results, fields) {
+                    
+    if (error) {
+        console.error('Fehler beim Speichern in der Datenbank:', error);
+        res.status(500).send('Fehler beim Speichern in der Datenbank:');
+    } else {
+        res.status(200).json({ message: 'Daten erfolgreich gespeichert' });
+      }
+    });
+  });
 
 // http://localhost:3000/home
 app.get('/home', function(req, res) {
@@ -347,7 +369,8 @@ app.use(bodyParser.json());
 //     }
 // });
 
-
+// const co2berechnungverkehr = require('../../frontend/auto');
+// console.log(co2berechnungverkehr);
 
 // localhost listen port app 
 app.listen(port, () => {
