@@ -26,3 +26,8 @@ document.getElementById('button-berechnen').addEventListener('click', function (
   console.log('Geschätzte CO2-Emissionen für die Ernährung:', co2berechnung);
 });
   
+// Definieren Sie eine GET-Route für q5.html
+app.get('/q5', (req, res) => {
+  // Verwenden Sie path.join, um den vollständigen Pfad zur q5.html zu erstellen
+  const filePath = path.join(__dirname, + '../../../q5.html');
+  res.sendFile(filePath);})

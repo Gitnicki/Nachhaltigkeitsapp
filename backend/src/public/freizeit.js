@@ -79,7 +79,7 @@ function co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisst
     }
   }
 
-  console.log(co2Emissionen);
+  console.log(co2Emissionenfreizeit);
   return co2Emissionenfreizeit;
 }
 
@@ -101,3 +101,9 @@ document.getElementById('button-berechnen').addEventListener('click', function (
   const co2berechnungfreizeit = co2berechnungperHour(gamingHours, dropdownvalue, platform, dropdownisstreaming, streamingHours, dropdownissocialmedia, socialHours, dropdowniszeitung, dropdowniszeitungdp, dropdownistiere, dropdownwelchestier, dropdownanzahltiere);
   console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnungfreizeit);
 });
+
+// Definieren Sie eine GET-Route für q2.html
+app.get('/q2', (req, res) => {
+  // Verwenden Sie path.join, um den vollständigen Pfad zur q2.html zu erstellen
+  const filePath = path.join(__dirname, + '../../../q2.html');
+  res.sendFile(filePath);})

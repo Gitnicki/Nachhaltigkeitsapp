@@ -60,3 +60,9 @@ document.getElementById('button-berechnen').addEventListener('click', function (
   const co2berechnung = co2berechnungwohnen(anzahlpersonen, anzahlstromkwh, strommix, heizform, heizkwh);
   console.log('Geschätzte CO2-Emissionen für die Wohn-Nutzung:', co2berechnung);
 });
+
+// Definieren Sie eine GET-Route für q4.html
+app.get('/q4', (req, res) => {
+  // Verwenden Sie path.join, um den vollständigen Pfad zur q4.html zu erstellen
+  const filePath = path.join(__dirname, + '../../../q4.html');
+  res.sendFile(filePath);})
