@@ -5,7 +5,7 @@ function Anmelden(id) {
     const options = {
         method: "POST"
     }
-    fetch(apiUrl + 'login/' + id, options)
+    fetch(apiUrl + 'login.html/' + id, options)
         .then(response => {
             //    getuser();
             console.log("POST Response", response);

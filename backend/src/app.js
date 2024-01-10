@@ -130,7 +130,7 @@ const cnx = getConnection();
 app.use('/', express.static(__dirname + '../../../frontend/'));
 /*
 // http://localhost:3000/login
-app.get('/login', function(req, res) {
+app.get('/login.html', function(req, res) {
 	// Render login template
 	res.sendFile(path.join(__dirname + '../../../frontend/login.html'));
 });
@@ -219,7 +219,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
 
 //sign up route
-app.post('/register', (req, res) => {
+app.post('/register.html', (req, res) => {
     const { benutzername, passwort, email } = req.body;
     console.log("req:", req.body);
     try{    
@@ -276,9 +276,9 @@ app.post('/register', (req, res) => {
     }
     });
 
-   
+
 //login route
-app.post('/login', (req, res) => {
+app.post('/login.html', (req, res) => {
     try {
         const { benutzername, passwort } = req.body;
         console.log("benutzername", benutzername);
@@ -290,7 +290,7 @@ app.post('/login', (req, res) => {
                 if (results.length > 0) {
                     req.session.loggedin = true;
 				    req.session.benutzername = benutzername;
-                    res.redirect('/home');
+                    res.redirect('/home.html');
                     const user_id = results[0].user_id;
                     console.log(user_id)
                     // const co2berechnungValues = {
@@ -346,7 +346,7 @@ app.post('/q1', (req, res) => {
   });
 
 // http://localhost:3000/home
-app.get('/home', function(req, res) {
+app.get('/home.html', function(req, res) {
 	// If the user is loggedin
 	if (req.session.loggedin) {
 		// Output username
