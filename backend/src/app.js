@@ -50,8 +50,16 @@ app.use('/static', express.static(__dirname + '/static'));
       if (path.endsWith('.js')) {
         res.setHeader('Content-Type', 'application/javascript');
       }
+      if (path.endsWith('.css')) {
+        res.setHeader('Content-Type', 'text/css');
+      }
     };
-
+app.use('/', express.static(__dirname + '../../../frontend/'));
+setHeaders: (res, path, stat) => {
+    if (path.endsWith('.css')) {
+      res.setHeader('Content-Type', 'text/css');
+    }
+  };
 
 // Check if the .env file exists
 if (config().parsed == undefined) {

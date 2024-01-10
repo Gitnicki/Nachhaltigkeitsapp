@@ -63,7 +63,7 @@ document.getElementById('button-berechnen').addEventListener('click', function (
     const kmjahroeffis = parseInt(document.getElementById('kmjahroeffis').value);
 
     const co2berechnung = co2berechnungverkehr(fahrzeugnutzung, kraftstoff, verbrauch, kmprojahr, dropdownifbusbahn, kmjahroeffis);
-    console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnung);
+    console.log('Geschätzte CO2-Emissionen für die Fahrzeugnutzung:', co2berechnung);
     localStorage.setItem("auto_co2", co2berechnung);
   });
 
