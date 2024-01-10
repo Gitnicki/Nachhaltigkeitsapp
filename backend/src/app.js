@@ -261,7 +261,8 @@ app.post('/register', (req, res) => {
     }
     });
 
-
+    const co2berechnungverkehr = require('../../frontend/auto');
+    console.log(co2berechnungverkehr);
 //login route
 app.post('/login', (req, res) => {
     try {
@@ -276,17 +277,29 @@ app.post('/login', (req, res) => {
                     req.session.loggedin = true;
 				    req.session.benutzername = benutzername;
                     res.redirect('/home');
+                    const co2berechnungValues = {
+                        user_id: results[0].user_id;
+                        verkehresmittel = co2berechnungverkehr,
+                        ernaehrung : 10, 
+                        freizeitverbrauch : 10,
+                        wasserverbrauch : 10,
+                        haushaltverbrauch : 10,
+                        gesamtverbrauch : 10,
+                    };
+                    cnx.query('INSERT INTO co2endberechnung SET ?', co2berechnungValues, function (error, results, fields) {
+                        if (error) throw error;
+                    });
                 } else {
                     res.send('Falscher Benutzername und/oder Passwort!');
                 }			
             });
         } else {
-            res.send('Bitte Benutzername and Passwort eingeben!');
+            res.send('Bitte Benutzername und Passwort eingeben!');
             res.end();
         }
     }catch (error) {
         // Es ist ein Fehler aufgetreten!
-        console.error("Could not retrieve ", error);
+        console.error("Fehler beim Server: ", error);
         return res.status(500).send('Fehler beim Server!');
         res.end();
     }
@@ -314,25 +327,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // POST-Route für die Verarbeitung der Benutzereingabe und Speicherung in der Datenbank
-app.post('/processInput', (req, res) => {
-    try {
-        const userInput = req.body.userInput;
-        console.log('erfolg');
-        const questionId = req.body.questionId; // Frage-ID aus dem Anfragekörper holen
-        // Daten in der MySQL-Datenbank speichern
-        cnx.query('INSERT INTO user_inputs (question_id, user_input) VALUES (?, ?)', [questionId, userInput], function (error, result) {
-            if (error) {
-                console.error('Fehler beim Speichern des Eintrags:', error);
-                return res.status(500).send('Interner Serverfehler');
-            } else {
-                return res.status(200).send('Daten erfolgreich gespeichert');
-            }
-        });
-    } catch (error) {
-        console.error("Ein Fehler ist aufgetreten: ", error);
-        return res.status(500).send('Serverfehler');
-    }
-});
+// app.post('/processInput', (req, res) => {
+//     try {
+//         const userInput = req.body.userInput;
+//         console.log('erfolg');
+//         const questionId = req.body.questionId; // Frage-ID aus dem Anfragekörper holen
+//         // Daten in der MySQL-Datenbank speichern
+//         cnx.query('INSERT INTO user_inputs (question_id, user_input) VALUES (?, ?)', [questionId, userInput], function (error, result) {
+//             if (error) {
+//                 console.error('Fehler beim Speichern des Eintrags:', error);
+//                 return res.status(500).send('Interner Serverfehler');
+//             } else {
+//                 return res.status(200).send('Daten erfolgreich gespeichert');
+//             }
+//         });
+//     } catch (error) {
+//         console.error("Ein Fehler ist aufgetreten: ", error);
+//         return res.status(500).send('Serverfehler');
+//     }
+// });
 
 
 

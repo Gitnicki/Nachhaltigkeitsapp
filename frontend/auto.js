@@ -66,6 +66,7 @@ document.getElementById('button-berechnen').addEventListener('click', function (
     console.log('Geschätzte CO2-Emissionen für die Gaming-Nutzung:', co2berechnung);
   });
 
+  module.exports = co2berechnungverkehr;
 
 // Um mit Weder Noch andere Optionen auszublenden, allerdings nur die derselben Frage, nicht aller
 
