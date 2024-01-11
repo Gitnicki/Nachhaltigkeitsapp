@@ -141,7 +141,6 @@ app.get('/login', function(req, res) {
 	// Render login template
 	res.sendFile(path.join(__dirname + './../../frontend/login.html'));
 });
-
 // http://localhost:3000/register
 app.get('/register', function(req, res) {
 	// Render register template
@@ -348,9 +347,9 @@ app.post('/q1', (req, res) => {
         res.status(500).send('Fehler beim Speichern in der Datenbank:');
     } else {
         res.status(200).json({ message: 'Daten erfolgreich gespeichert' });
-      }
+    }
     });
-  });
+});
 
 // http://localhost:3000/home
 app.get('/home', function(req, res) {
