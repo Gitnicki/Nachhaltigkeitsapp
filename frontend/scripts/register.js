@@ -1,7 +1,7 @@
 const apiUrl = "http://localhost:3000/";
 
 function Registrieren(id) {
-    console.log("Benuzer registriert ", id);
+    console.log("Benutzer registriert ", id);
     const options = {
         method: "POST"
     }
