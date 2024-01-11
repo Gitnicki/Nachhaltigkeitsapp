@@ -1,11 +1,12 @@
 const apiUrl = "http://localhost:3000/";
 
-function Anmelden(id) {
-    console.log("Benuzer angemeldet ", id);
+function redirectToHome(benutzername) {
+    benutzername= document.getElementById('benutzername')
+    console.log("Benuzer angemeldet ", benutzername);
     const options = {
         method: "POST"
     }
-    fetch(apiUrl + 'login.html/' + id, options)
+    fetch(apiUrl + 'login', options)
         .then(response => {
             //    getuser();
             console.log("POST Response", response);

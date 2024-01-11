@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar bg-body-tertiary ecoleaf">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index">
                 <img src="images/icon.jpg" alt="Icon" width="40" height="35" class="d-inline-block align-text-top">
                 EcoLeaf
             </a>
@@ -21,7 +21,7 @@
     </nav>
 
     <div class="wrapper">
-        <form action="/login.html" method="POST">
+        <form action="/login" method="POST">
         <h1>Login</h1>
         <div class="input-box">
             <input name="benutzername" type="text" placeholder="Benutzername" required>
@@ -36,7 +36,7 @@
             <label><input type="checkbox">Merken</label>
             <a href="#">Passwort vergessen</a>
         </div>
-        <button onclick="redirectToHome()" type="submit" class="btn">Anmelden</button>
+        <button id="Anmelden" onclick="redirectToHome()" type="submit" class="btn">Anmelden</button>
         <div class="register-link">
             <p>noch kein Konto? <a href="register">Registrieren</a></p>
         </div>
@@ -45,10 +45,10 @@
     <footer class="navbar navbar-expand-lg bg-secondary footer" style="height: 180px;" data-bs-theme="dark">
         <div class="container-fluid">
             <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
-                <li class="nav-item px-2"><a href="home.html" target="_self" class="nav-link">Home</a></li>
-                <li class="nav-item px-2"><a href="datenschutz.html" target="_self" class="nav-link">Datenschutz</a></li>
-                <li class="nav-item px-2"><a href="contact.html" target="_self" class="nav-link">Kontakt</a></li>
-                <li class="nav-item px-2"><a href="impressum.html" target="_self" class="nav-link">Impressum</a></li>
+                <li class="nav-item px-2"><a href="home" target="_self" class="nav-link">Home</a></li>
+                <li class="nav-item px-2"><a href="datenschutz" target="_self" class="nav-link">Datenschutz</a></li>
+                <li class="nav-item px-2"><a href="contact" target="_self" class="nav-link">Kontakt</a></li>
+                <li class="nav-item px-2"><a href="impressum" target="_self" class="nav-link">Impressum</a></li>
             </ul>
         </div>
     </form>
@@ -57,11 +57,11 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
     <script src="/static/login.js"></script> 
-    <script>
+    <!-- <script>
         // JavaScript, um die GET-Anfrage auszulösen
-        document.getElementById('redirectToHome').addEventListener('click', function() {
+        document.getElementById('Anmelden').addEventListener('click', function() {
             // Erstellen Sie eine GET-Anfrage zum Server für /home
-            fetch('/home.html')
+            fetch('/home')
             .then(response => response.text())
             .then(html => {
                 // Ersetzen Sie den Inhalt des aktuellen Dokuments mit dem geladenen HTML
@@ -71,7 +71,7 @@
             })
             .catch(error => console.error('Error:', error));
         });
-        </script>
+        </script> -->
 </form>  
 </body>
 </html>
