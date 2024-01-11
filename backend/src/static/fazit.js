@@ -21,11 +21,11 @@ function fazitberechnung(display, displaywasser) {
    let Endco2Emissionen = 0;
 
   // Datenbank muss implementiert werden 
-   Endco2Emissionen = autoberechnung + (freizeitberechnung * 52.1786) + wohnberechnung + nahrungsberechnung;
+   Endco2Emissionen = (autoberechnung + (freizeitberechnung * 52.1786) + wohnberechnung + nahrungsberechnung) / 1000000;
    display.value = Endco2Emissionen;
     displaywasser.value = wasserberechnung;
     
-    return Endco2Emissionen / 1000000;
+    return Endco2Emissionen;
 };
 
 // Anruf der Funktion
