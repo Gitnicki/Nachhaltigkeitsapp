@@ -341,9 +341,9 @@ app.post('/q1', (req, res) => {
         res.status(500).send('Fehler beim Speichern in der Datenbank:');
     } else {
         res.status(200).json({ message: 'Daten erfolgreich gespeichert' });
-      }
+    }
     });
-  });
+});
 
 // http://localhost:3000/home
 app.get('/home.html', function(req, res) {
