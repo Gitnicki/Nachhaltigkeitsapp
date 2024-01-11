@@ -134,13 +134,13 @@ app.get('/login.html', function(req, res) {
 	// Render login template
 	res.sendFile(path.join(__dirname + '../../../frontend/login.html'));
 });
-
+*/
 // http://localhost:3000/register
 app.get('/register', function(req, res) {
 	// Render register template
 	res.sendFile(path.join(__dirname + '../../../frontend/register.html'));
 });
-
+/*
 // http://localhost:3000/home
 app.get('/home', function(req, res) {
 	// Render register template
@@ -219,7 +219,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
 
 //sign up route
-app.post('/register.html', (req, res) => {
+app.post('/register', (req, res) => {
     const { benutzername, passwort, email } = req.body;
     console.log("req:", req.body);
     try{    
