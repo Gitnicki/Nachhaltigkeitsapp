@@ -70,23 +70,23 @@ document.getElementById('button-berechnen').addEventListener('click', function (
   // client (auto.js)
 // const co2berechnungverkehr = 16;
 
-// fetch('/q1', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({ co2berechnungverkehr: co2berechnungverkehr }),
-// })
-//     .then(res => res.json())
-//     .then(data => {
-//     console.log('Response Server :', data);
-//     })
-//     .catch(error => {
-//     console.error('Error :', error);
-//     });''
+fetch('/q1', {
+     method: 'POST',
+     headers: {
+         'Content-Type': 'application/json'
+     },
+     body: JSON.stringify({ co2berechnungverkehr: co2berechnungverkehr }),
+ })
+     .then(res => res.json())
+     .then(data => {
+     console.log('Response Server :', data);
+     })
+     .catch(error => {
+     console.error('Error :', error);
+     });''
 
 
-//   module.exports = co2berechnungverkehr;
+   module.exports = co2berechnungverkehr;
 
 // Um mit Weder Noch andere Optionen auszublenden, allerdings nur die derselben Frage, nicht aller
 
