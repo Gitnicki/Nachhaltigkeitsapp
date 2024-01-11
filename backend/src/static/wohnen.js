@@ -1,5 +1,6 @@
   function co2berechnungwohnen(anzahlpersonen, anzahlstromkwh, strommix, heizform, heizkwh) {
     let co2EmissionenProKwh; // CO2-Emissionen pro kwh
+    let co2EmissionenProKwhH; // CO2-Emissionen pro kwh Heizen
     let co2Emissionenwohnen = 0; // Gesamte CO2-Emissionen im Bereich Wohnen
 
       switch (strommix) {
@@ -19,32 +20,32 @@
           co2EmissionenProStunde = 0;
       }
         console.log(co2EmissionenProStunde);
-        console.log(anzahlstromkwh);
         // Berechnung der CO2 Emissionen in g pro Jahr
-        co2Emissionenwohnen = anzahlstromkwh * co2EmissionenProStunde;
-      
+        co2EmissionenProKwh = anzahlstromkwh * co2EmissionenProStunde;
+        console.log(co2EmissionenProKwh);
+
         switch (heizform) {
         case 'heizoel':
-          co2EmissionenProKwh = 260; // Menge CO2 für eine kwh Heizöl
+          co2EmissionenProKwhH = 260; // Menge CO2 für eine kwh Heizöl
           break;
         case 'erdgas':
-          co2EmissionenProKwh = 230; // Menge CO2 für eine kwh Erdgas
+          co2EmissionenProKwhH = 230; // Menge CO2 für eine kwh Erdgas
           break;
         case 'brennholz':
-          co2EmissionenProKwh = 575; // Menge CO2 für eine kwh Brennholz
+          co2EmissionenProKwhH = 575; // Menge CO2 für eine kwh Brennholz
           break;
         case 'strom':
-          co2EmissionenProKwh = 420; // Menge CO2 für eine kwh Strom
+          co2EmissionenProKwhH = 420; // Menge CO2 für eine kwh Strom
           break;
         default:
-          co2EmissionenProKwh = 0;
+          co2EmissionenProKwhH = 0;
       }
-        console.log(co2EmissionenProKwh);
-        console.log(heizkwh);
-        // Berechnung der CO2 Emissionen in g pro Jahr
-        co2Emissionenwohnen += heizkwh * co2EmissionenProKwh;
-
-      return co2Emissionenwohnen / anzahlpersonen;
+      console.log(co2EmissionenProKwhH);
+      // Berechnung der CO2 Emissionen in g pro Jahr
+      co2Emissionenwohnen = (co2EmissionenProKwhH + co2EmissionenProKwh) / anzahlpersonen;
+      console.log(co2Emissionenwohnen);
+      
+      return co2Emissionenwohnen;
       }
 
 
@@ -58,6 +59,6 @@ document.getElementById('button-berechnen').addEventListener('click', function (
   const heizkwh = parseInt(document.getElementById('heizkwh').value);
 
   const co2berechnung = co2berechnungwohnen(anzahlpersonen, anzahlstromkwh, strommix, heizform, heizkwh);
-  console.log('Geschätzte CO2-Emissionen für die Wohn-Nutzung:', co2berechnung);
+  console.log('Geschätzte CO2-Emissionen für die Wohn-Nutzung:', co2berechnung.toFixed(2) );
   localStorage.setItem("wohnen_co2", co2berechnung);
 });
