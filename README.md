@@ -6,17 +6,22 @@ Eine App, die Benutzern ermöglicht, ihren persönlichen ökologischen Fußabdru
 
 GIT Repo clonen
 
+Verwendet Nodejs Server
+
 Requirements installieren:
 
 ```
-npm install
+npm init
 ```
 
 ```
-npm init --save
+npm install --save
 ```
 Starten im backend/src - Ordner
 
 ```
 node app.js
 ```
+Frontend:
+
+Landingpage ist im frontend/index.html. Bisher gibt es nur einen Localstorage, so dass bei jedem Neustart des Servers die Daten verloren gehen. Es wird aber eine Datenbank implementiert.
